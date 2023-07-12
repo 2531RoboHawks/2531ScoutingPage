@@ -1,0 +1,27 @@
+h1 {
+    font-size: 300%;
+    text-align: center;
+    font-family: monospace;
+        }
+
+#matchesSchedules {
+                display: flex;
+                padding: 0;
+                margin: 0;
+                list-style-type: none;
+                justify-content: space-evenly;
+                font-size: 160%;
+                color: blue;
+    
+            }
+#data {
+                display: flex;
+                padding: 0;
+                margin: 0;
+                list-style-type: none;
+                justify-content: space-evenly;
+                font-size: 160%;
+                color: red;
+    
+            }
+

@@ -1,0 +1,32 @@
+h1 {
+    font-family: monospace;
+    text-align: center;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+}
+
+table, th, td {
+    border:1px solid black;
+    text-align: center;
+}
+
+#matchNumber{
+    font-size: 20px;
+}
+
+#redAlliance{
+    background-color: red;
+    font-size: 20px;
+}
+
+#blueAlliance{
+    background-color: blue;
+    font-size: 20px;
+}
+
+#addRowButton{
+    text-align: center;
+}
