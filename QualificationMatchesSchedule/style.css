@@ -17,11 +17,13 @@ table, th, td {
 #timeInput {
     border-color: white;
     width: 100px;
+    
 }
 
 #matchInput{
     border-color: white;
     width: 10px;
+    margin-top:22px;
 }
 
 #matchInput{
@@ -51,5 +53,11 @@ table, th, td {
 }
 
 #addRowButton{
-    position: center;
+    position: left;
+    margin-left: 153px;
+}
+
+#saveButton{
+    position: right;
+    margin-left: 500px;
 }
