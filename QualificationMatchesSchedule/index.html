@@ -11,11 +11,12 @@
 <body>
     <script src="app.js"></script>
         <h1 style="text-align:center">Qualification Matches Schedule</h1>
-    <div class="container">
+    <div class="qualContainer">
+        <button id = "addRowButton">Add Row</button>
         <table id = "matchesTable" width="500px" height="100px">
             <tr>
                 <th>Time</th>
-                <th>Matches</th>
+                <th>Match</th>
                 <th>Red 1</th>
                 <th>Red 2</th>
                 <th>Red 3</th>
@@ -24,19 +25,43 @@
                 <th>Blue 3</th>
             </tr>
             <tbody>
-                <tr id = "matchRow">
-                    <th id = "time"></th>
-                    <td id = "matchNumber"></td>
-                    <td id = "redAlliance"></td>
-                    <td id = "redAlliance"></td>
-                    <td id = "redAlliance"></td>
-                    <td id = "blueAlliance"></td>
-                    <td id = "blueAlliance"></td>
-                    <td id = "blueAlliance"></td>
+                <tr id = "Row">
+                    <th id = "time">
+                        <form></form>
+                        <input id="timeInput" type="time">
+                    </th>
+                    <td id = "matchNumber">
+                        <form></form>
+                        <input id="matchInput" type="number">
+                        <h6></h6>
+                    </td>
+                    <td id = "redAlliance">
+                        <form></form>
+                        <input id="redInput" type="number">
+                    </td>
+                    <td id = "redAlliance">
+                        <form></form>
+                        <input id="redInput" type="number">
+                    </td>
+                    <td id = "redAlliance">
+                        <form></form>
+                        <input id="redInput" type="number">
+                    </td>
+                    <td id = "blueAlliance">
+                        <form></form>
+                        <input id="blueInput" type="number">
+                    </td>
+                    <td id = "blueAlliance">
+                        <form></form>
+                        <input id="blueInput" type="number">
+                    </td>
+                    <td id = "blueAlliance">
+                        <form></form>
+                        <input id="blueInput" type="number">
+                    </td>
                 </tr>
             </tbody>
         </table>
     </div>
-            <button id = "addRowButton">Add Row</button>
 </body>
 </html>

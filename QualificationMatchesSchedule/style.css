@@ -3,9 +3,10 @@ h1 {
     text-align: center;
 }
 
-.container{
+.qualContainer{
     display: flex;
     justify-content: center;
+    display: flex;
 }
 
 table, th, td {
@@ -13,8 +14,20 @@ table, th, td {
     text-align: center;
 }
 
-#matchNumber{
-    font-size: 20px;
+#timeInput {
+    border-color: white;
+    width: 100px;
+}
+
+#matchInput{
+    border-color: white;
+    width: 10px;
+}
+
+#matchInput{
+    size: 30px;
+    border-color: white;
+    width: 45px;
 }
 
 #redAlliance{
@@ -22,11 +35,21 @@ table, th, td {
     font-size: 20px;
 }
 
+#redInput{
+    background-color: red;
+    width: 60px;
+}
+
 #blueAlliance{
     background-color: blue;
     font-size: 20px;
 }
 
+#blueInput{
+    background-color: blue;
+    width: 60px;
+}
+
 #addRowButton{
-    text-align: center;
+    position: center;
 }
