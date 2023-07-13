@@ -53,6 +53,7 @@ table, th, td {
 
 .redInput{
     background-color: red;
+    border-color: red;
     width: 60px;
 }
 
@@ -63,5 +64,6 @@ table, th, td {
 
 .blueInput{
     background-color: blue;
+    border-color: blue;
     width: 60px;
 }

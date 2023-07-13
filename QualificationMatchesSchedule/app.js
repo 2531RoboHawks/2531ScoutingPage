@@ -48,6 +48,10 @@ function removeRow(){
     }
 }
 
-// function save() {
-//     let input = document.getElementsByClassName()
-// }
+function saveInput() {
+    for(let i = 0; i < tr.length; i++){
+        let timeInput = document.getElementById("timeInput_"+i).value;
+        timeInput.innerHTML = timeInput;
+        console.log(timeInput);
+    }
+}
