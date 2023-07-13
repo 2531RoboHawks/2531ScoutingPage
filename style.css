@@ -2,31 +2,37 @@
     display: flex;
 }
 
-
 h1 {
     font-size: 300%;
     text-align: center;
     font-family: monospace;
-        }
+}
 
-#matchesSchedules {
-                display: flex;
-                padding: 0;
-                margin: 0;
-                list-style-type: none;
-                justify-content: space-evenly;
-                font-size: 160%;
-                color: blue;
-    
-            }
-#data {
-                display: flex;
-                padding: 0;
-                margin: 0;
-                list-style-type: none;
-                justify-content: space-evenly;
-                font-size: 160%;
-                color: red;
-    
-            }
+#practiceMatchSchedule {
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 160%;
+    color: rgb(97, 94, 94);
+}
+
+#qualMatchSchedule {
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 160%;
+    color: blue;
+}
+
+#scoutingData {
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 130%;
+    color: red;
+}
+
+#recordData {
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 130%;
+    color: rgb(120, 56, 180);
+}
 
