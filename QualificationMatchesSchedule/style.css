@@ -14,22 +14,18 @@ table, th, td {
     text-align: center;
 }
 
+#matchVideo {
+    font-size: small;
+}
+
 #timeInput {
     border-color: white;
     width: 100px;
     
 }
-
 #matchInput{
     border-color: white;
-    width: 10px;
-    margin-top:22px;
-}
-
-#matchInput{
-    size: 30px;
-    border-color: white;
-    width: 45px;
+    width: 30px;
 }
 
 #redAlliance{
