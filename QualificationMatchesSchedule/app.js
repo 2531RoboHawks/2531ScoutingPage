@@ -47,6 +47,7 @@ function removeRow(){
         rowCount--;
     }
 }
+//TODO: prompt() function to add link
 
 function saveInput() {
     for(let i = 0; i < tr.length; i++){
@@ -54,4 +55,12 @@ function saveInput() {
         timeInput.innerHTML = timeInput;
         console.log(timeInput);
     }
+
+    for(let i = 0; i < tr.length; i++){
+        let matchInput = document.getElementById("matchInput_"+i).value;
+        matchInput.innerHTML = matchInput;
+        console.log(matchInput);
+    }
+
+    
 }
