@@ -4,3 +4,4 @@ W3 Schools (HTML): https://www.w3schools.com/html/html_examples.asp
 
 Typograph in CSS: https://www.washington.edu/accesscomputing/webd2/student/unit3/module3/lesson2.html#:~:text=Font%20Families%3A%20Serif%2C%20Sans%2D,cursive%2C%20fantasy%2C%20and%20monospace.
 
+Netify: https://app.netlify.com/teams/daonguyenk06/overview
