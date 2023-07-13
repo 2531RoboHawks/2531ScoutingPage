@@ -9,57 +9,68 @@
 </head>
 
 <body>
-    <script src="app.js"></script>
-        <h1 style="text-align:center">Qualification Matches Schedule</h1>
+    <h1 style="text-align:center">Qualification Matches Schedule</h1>
         
     <div class="qualContainer">
-        <table id = "matchesTable" width="500px" height="100px">
-            <tr>
-                <th>Time</th>
-                <th>Video</th>
-                <th>Match</th>
-                <th>Red 1</th>
-                <th>Red 2</th>
-                <th>Red 3</th>
-                <th>Blue 1</th>
-                <th>Blue 2</th>
-                <th>Blue 3</th>
-            </tr>
-            <tbody>
-                <tr id = "Row">
-                    <td id = "time">
-                        <input id="timeInput" type="time">
-                    </td>
-                    <td id = "matchVideo">
-                        <a href="">link</a>
-                    </td>
-                    <td id = "matchNumber">
-                        <input id="matchInput" type="number">
-                    </td>
-                    <td id = "redAlliance" href="">
-                        <input id="redInput" type="number">
-                    </td>
-                    <td id = "redAlliance">
-                        <input id="redInput" type="number">
-                    </td>
-                    <td id = "redAlliance">
-                        <input id="redInput" type="number">
-                    </td>
-                    <td id = "blueAlliance">
-                        <input id="blueInput" type="number">
-                    </td>
-                    <td id = "blueAlliance">
-                        <input id="blueInput" type="number">
-                    </td>
-                    <td id = "blueAlliance">
-                        <input id="blueInput" type="number">
-                    </td>
+        <div class="table" width="500px" height="100px">
+            <table id = "matchesTable">
+                <tr>
+                    <th>Time</th>
+                    <th>Video</th>
+                    <th>Match</th>
+                    <th>Red 1</th>
+                    <th>Red 2</th>
+                    <th>Red 3</th>
+                    <th>Blue 1</th>
+                    <th>Blue 2</th>
+                    <th>Blue 3</th>
                 </tr>
-                
-            </tbody>
-        </table>
+                <tbody id="tbody">
+                    <tr class="tr">
+                        <td class = "time">
+                            <input class="timeInput" id="timeInput_0" type="time">
+                        </td>
+                        <td class = "matchVideo" id="matchVideo_0">
+                            <a href="">link</a>
+                        </td>
+                        <td class = "matchNumber">
+                            <input class="matchInput" id="matchInput_0" type="number">
+                        </td>
+                        <td class = "redAlliance" href="">
+                            <input class="redInput" id="red1_0" type="number">
+                        </td>
+                        <td class = "redAlliance">
+                            <input class="redInput" id="red2_0" type="number">
+                        </td>
+                        <td class = "redAlliance">
+                            <input class="redInput" id="red3_0" type="number">
+                        </td>
+                        <td class = "blueAlliance">
+                            <input class="blueInput" id="blue1_0" type="number">
+                        </td>
+                        <td class = "blueAlliance">
+                            <input class="blueInput" id="blue2_0" type="number">
+                        </td>
+                        <td class = "blueAlliance">
+                            <input class="blueInput" id="blue3_0" type="number">
+                        </td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+    
+            <div class="buttonContainer">
+                <div class="buttonGroup">
+                    <button id = "addRowButton" onclick="addRow()">Add Row</button>
+                    <button id = "removeRowButton" onclick="removeRow()">Remove Row</button>
+                </div>
+                <button id = "saveButton" onclick="save()">Save</button>
+            </div>
+        </div>
+        
     </div>
-    <button id = "addRowButton">Add Row</button>
-    <button id = "saveButton">Save</button>
+
+
+    <script src="app.js"></script>
 </body>
 </html>

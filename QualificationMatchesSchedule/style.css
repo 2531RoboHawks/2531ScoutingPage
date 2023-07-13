@@ -5,8 +5,26 @@ h1 {
 
 .qualContainer{
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
+}
+
+.buttonContainer{
+    width: 100%;
+    margin-top: 10px;
     display: flex;
+    justify-content: space-between;
+}
+
+.buttonGroup{
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+#addRowButton{
+    margin-right: 10px;
 }
 
 table, th, td {
@@ -14,46 +32,36 @@ table, th, td {
     text-align: center;
 }
 
-#matchVideo {
+.matchVideo {
     font-size: small;
 }
 
-#timeInput {
+.timeInput {
     border-color: white;
     width: 100px;
     
 }
-#matchInput{
+.matchInput{
     border-color: white;
     width: 30px;
 }
 
-#redAlliance{
+.redAlliance{
     background-color: red;
     font-size: 20px;
 }
 
-#redInput{
+.redInput{
     background-color: red;
     width: 60px;
 }
 
-#blueAlliance{
+.blueAlliance{
     background-color: blue;
     font-size: 20px;
 }
 
-#blueInput{
+.blueInput{
     background-color: blue;
     width: 60px;
-}
-
-#addRowButton{
-    position: left;
-    margin-left: 153px;
-}
-
-#saveButton{
-    position: right;
-    margin-left: 500px;
 }
