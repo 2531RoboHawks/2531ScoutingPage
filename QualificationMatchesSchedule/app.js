@@ -52,13 +52,12 @@ function removeRow(){
         rowCount--;
     }
 }
-//TODO: prompt() function to add link
-
 function insertLink(linkID) {
+    
     let ourLink = document.querySelector(`#${linkID}`);
     let askLink = prompt("insert video link here:");
     ourLink.innerHTML = askLink;
-    // ourLink.href = askLink;
+    ourLink.href = askLink;
     console.log(askLink);
 }
 
