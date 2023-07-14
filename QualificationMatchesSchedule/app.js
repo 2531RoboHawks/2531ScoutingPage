@@ -1,10 +1,3 @@
-import { initializeApp } from 'firebase/app';
-
-// TODO: Replace the following with your app's Firebase project configuration
-const firebaseConfig = {
-    
-  };
-
 const tbody = document.getElementById("tbody");
 const tr = document.getElementsByClassName("tr");
 
@@ -12,7 +5,8 @@ const tr = document.getElementsByClassName("tr");
 let timeRow = document.getElementById("time");
 let matchRow = document.getElementById("matchNumber");
 let rowCount = 1;
-removeRow
+
+
 function addRow(){
     tbody.innerHTML += `
     <tr class="tr">
