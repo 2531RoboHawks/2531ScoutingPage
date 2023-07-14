@@ -1,0 +1,35 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+table, th, td {
+    border:1px solid black;
+    text-align: center;
+    
+}
+
+.matchInfo {
+    position: relative;
+    justify-content: left;
+}
+
+.capabilities {
+    position: relative;
+    justify-content: right;    
+}
+
+#matchNum{
+    
+}
+
+#teamNum {
+
+}
+
+.buttonContainer {
+    justify-content: center;
+    display: flex;
+}

@@ -1,3 +1,10 @@
+import { initializeApp } from 'firebase/app';
+
+// TODO: Replace the following with your app's Firebase project configuration
+const firebaseConfig = {
+    
+  };
+
 const tbody = document.getElementById("tbody");
 const tr = document.getElementsByClassName("tr");
 
