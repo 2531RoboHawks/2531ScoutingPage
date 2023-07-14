@@ -1,14 +1,13 @@
 .container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
 }
 
 table, th, td {
     border:1px solid black;
     text-align: center;
-    
 }
 
 .matchInfo {
@@ -22,11 +21,11 @@ table, th, td {
 }
 
 #matchNum{
-    
+    width: 30px;
 }
 
 #teamNum {
-
+    width: 50px;
 }
 
 .buttonContainer {
