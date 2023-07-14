@@ -24,6 +24,7 @@
                     <th>Blue 1</th>
                     <th>Blue 2</th>
                     <th>Blue 3</th>
+                    <th></th>
                 </tr>
                 <tbody id="tbody">
                     <tr class="tr">
@@ -34,7 +35,7 @@
                             <a id="link_0" href="" onclick="insertLink('link_0')">link</a>
                         </td>
                         <td class = "matchNumber">
-                            <input class="matchInput" id="matchInput_0" type="text">
+                            <input class="matchInput" id="matchInput_0" type="number">
                         </td>
                         <td class = "redAlliance" href="">
                             <input class="redInput" id="red1_0" type="number">
@@ -54,6 +55,10 @@
                         <td class = "blueAlliance">
                             <input class="blueInput" id="blue3_0" type="number">
                         </td>
+                        <td class = "removeRow">
+                            <button id = "removeRowButton_0" onclick="removeRow()">delete</button>
+                            <button id="editRowButton_0" onclick="editRow()">edit</button>
+                        </td>
                     </tr>
                     
                 </tbody>
@@ -62,7 +67,7 @@
             <div class="buttonContainer">
                 <div class="buttonGroup">
                     <button id = "addRowButton" onclick="addRow()">Add Row</button>
-                    <button id = "removeRowButton" onclick="removeRow()">Remove Row</button>
+                    
                 </div>
                 <button id = "saveButton" onclick="saveInput()">Save</button>
             </div>

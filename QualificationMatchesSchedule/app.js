@@ -37,6 +37,10 @@ function addRow(){
         <td class = "blueAlliance">
             <input class="blueInput" id="blue3_${rowCount}" type="number">
         </td>
+        <td class = "removeRow">
+            <button id = "removeRowButton_${rowCount}" onclick="removeRow()">delete</button>
+            <button id="editRowButton_${rowCount}" onclick="editRow()">edit</button>
+        </td>
     </tr>`;
     rowCount++;
 }
