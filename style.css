@@ -22,14 +22,28 @@ h1 {
     color: blue;
 }
 
-#scoutingData {
+#instandScoutingForm {
     display: flex;
     justify-content: space-evenly;
     font-size: 130%;
-    color: red;
+    color: rgb(228, 150, 35);
 }
 
-#recordData {
+#instandScoutingData {
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 130%;
+    color: rgb(120, 56, 180);
+}
+
+#scoutingForm {
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 130%;
+    color: rgb(228, 150, 35);
+}
+
+#scoutingData {
     display: flex;
     justify-content: space-evenly;
     font-size: 130%;
