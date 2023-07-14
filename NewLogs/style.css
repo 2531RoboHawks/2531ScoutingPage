@@ -15,11 +15,6 @@ table, th, td {
     justify-content: left;
 }
 
-.capabilities {
-    position: relative;
-    justify-content: right;    
-}
-
 #matchNum{
     width: 30px;
 }
