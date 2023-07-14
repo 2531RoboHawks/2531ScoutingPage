@@ -2,7 +2,7 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-app.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-analytics.js";
 
-//import { getFirestore, collection, getDocs } from 'firebase/firestore/lite';
+import { getFirestore, collection, getDocs } from 'https://www.gstatic.com/firebasejs/10.0.0/firebase-firestore-lite.js';
 
 // Follow this pattern to import other Firebase services
     // import {} from "https://www.gstatic.com/firebasejs/${FIREBASE_VERSION}/firebase-analytics.js";
@@ -36,12 +36,16 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 
-// const db = getFirestore(app);
+const db = getFirestore(app);
 
-// Ex: Get a list of cities from your database
-  // async function getCities(db) {
-  //   const citiesCol = collection(db, 'cities');
-  //   const citySnapshot = await getDocs(citiesCol);
-  //   const cityList = citySnapshot.docs.map(doc => doc.data());
-  //   return cityList;
-  // }
+// Ex: Get a list of cities from your databasegetCities
+async function getMatchSchedule(db) {
+  const matchSchedule = collection(db, 'matchSchedule');
+  const matchScheduleData = await getDocs(matchSchedule);
+  const matchScheduleDataList = matchScheduleData.docs.map(doc => doc.data());
+  return matchScheduleDataList;
+}
+
+const matchSchedule = getMatchSchedule(db);
+
+console.log(matchSchedule);

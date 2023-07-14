@@ -14,7 +14,7 @@ function addRow(){
             <input class="timeInput" id="timeInput_${rowCount}" type="time">
         </td>
         <td class = "matchVideo" id="matchVideo_${rowCount}">
-            <a id="link_${rowCount}" href="" onclick="insertLink()">link</a>
+            <a id="link_${rowCount}" href="" onclick="insertLink('link_${rowCount}')">link</a>
         </td>
         <td class = "matchNumber">
             <input class="matchInput" id="matchInput_${rowCount}" type="number">
@@ -50,10 +50,12 @@ function removeRow(){
 }
 //TODO: prompt() function to add link
 
-function insertLink () {
-    let link = prompt("insert video link here:");
-    link.innerHTML = link;
-    console.log(link);
+function insertLink(linkID) {
+    let ourLink = document.querySelector(`#${linkID}`);
+    let askLink = prompt("insert video link here:");
+    ourLink.innerHTML = askLink;
+    // ourLink.href = askLink;
+    console.log(askLink);
 }
 
 function saveInput() {
