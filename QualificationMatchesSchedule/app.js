@@ -9,7 +9,7 @@ let rowCount = 1;
 
 function addRow(){
     tbody.innerHTML += `
-    <tr class="tr">
+    <tr class="tr_${rowCount}">
         <td class = "time">
             <input class="timeInput" id="timeInput_${rowCount}" type="time">
         </td>
@@ -47,8 +47,8 @@ function addRow(){
 
 //TODO: remove designated row
 function removeRow(){
-    let currentChild = tr[tr.length - 1];
-    console.log(currentChild.parentNode.removeChild(currentChild));
+    let desigRow = tr[tr.length - 1];
+    console.log(desigRow.parentNode.removeChild(desigRow));
     rowCount--;
 }
 
