@@ -2,7 +2,7 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-app.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-analytics.js";
 
-import { getFirestore, collection, getDocs } from 'https://www.gstatic.com/firebasejs/10.0.0/firebase-firestore-lite.js';
+//import { getFirestore, collection, getDocs } from 'https://www.gstatic.com/firebasejs/10.0.0/firebase-firestore-lite.js';
 
 // Follow this pattern to import other Firebase services
     // import {} from "https://www.gstatic.com/firebasejs/${FIREBASE_VERSION}/firebase-analytics.js";
@@ -33,10 +33,11 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
+const firebase = initializeApp(firebaseConfig);
 
-const db = getFirestore(app);
+const analytics = getAnalytics(firebase);
+
+//const db = getFirestore(app);
 
 //Example:
   // async function getMatchSchedule(database) {
@@ -45,6 +46,5 @@ const db = getFirestore(app);
   //   const matchScheduleDataList = matchScheduleData.docs.map(doc => doc.data());
   //   return matchScheduleDataList;
   // }
-  //const matchSchedule = getMatchSchedule(database);
-  //console.log(matchSchedule);
 
+//const matchSchedule = getMatchSchedule(db);
