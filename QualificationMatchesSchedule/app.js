@@ -41,12 +41,18 @@ function addRow(){
     rowCount++;
 }
 
+function getID(){
+    //TODO: figure out how to get HTML IDs
+}
+
+//TODO: remove designated row
 function removeRow(){
     if(tr.length > 1){
         let desigRow = tr[tr.length - 1];
         console.log(desigRow.parentNode.removeChild(desigRow));
         rowCount--;
     }
+    getID();
 }
 
 function insertLink(linkID) {
