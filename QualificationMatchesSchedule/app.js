@@ -43,11 +43,12 @@ function addRow(){
 
 function removeRow(){
     if(tr.length > 1){
-        let currentChild = tr[tr.length - 1];
-        console.log(currentChild.parentNode.removeChild(currentChild));
+        let desigRow = tr[tr.length - 1];
+        console.log(desigRow.parentNode.removeChild(desigRow));
         rowCount--;
     }
 }
+
 function insertLink(linkID) {
     let ourLink = document.querySelector(`#${linkID}`);
     let askLink = prompt("insert video link here:");
