@@ -6,7 +6,7 @@ let timeRow = document.getElementById("time");
 let matchRow = document.getElementById("matchNumber");
 let rowCount = 1;
 
-
+//TODO: add row from a form with user input
 function addRow(){
     tbody.innerHTML += `
     <tr class="tr">
@@ -14,7 +14,7 @@ function addRow(){
             <input class="timeInput" id="timeInput_${rowCount}" type="time">
         </td>
         <td class = "matchVideo" id="matchVideo_${rowCount}">
-            <a href="">link</a>
+            <a id="linkID" href="">link</a>
         </td>
         <td class = "matchNumber">
             <input class="matchInput" id="matchInput_${rowCount}" type="number">
@@ -37,6 +37,10 @@ function addRow(){
         <td class = "blueAlliance">
             <input class="blueInput" id="blue3_${rowCount}" type="number">
         </td>
+        <td>
+            <button id="removeRowButton_${rowCount}" onclick="removeRow()">delete</button>
+            <button id="editRowButon_${rowCount}" onclick="editRow()">edit</button>
+        </td>
     </tr>`;
     rowCount++;
 }
@@ -47,6 +51,7 @@ function getID(){
 
 //TODO: remove designated row
 function removeRow(){
+    console.log("remove row");
     if(tr.length > 1){
         let desigRow = tr[tr.length - 1];
         console.log(desigRow.parentNode.removeChild(desigRow));
@@ -55,15 +60,18 @@ function removeRow(){
     getID();
 }
 
+//TODO: make href hold user input, even if temporarily.
 function insertLink(linkID) {
     let ourLink = document.querySelector(`#${linkID}`);
     let askLink = prompt("insert video link here:");
     ourLink.innerHTML = askLink;
-    // ourLink.href = askLink;
+    ourLink.href = askLink;
     console.log(askLink);
 }
 
+//TODO: figure out how to save data to firebase.
 function saveInput() {
+    console.log("save");
     for(let i = 0; i < tr.length; i++){
         let timeInput = document.getElementById("timeInput_"+i).value;
         timeInput.innerHTML = timeInput;
@@ -75,6 +83,9 @@ function saveInput() {
         matchInput.innerHTML = matchInput;
         console.log(matchInput);
     }
-
     
+}
+
+function editRow() {
+    console.log("edit row");
 }

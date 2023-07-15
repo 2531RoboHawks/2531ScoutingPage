@@ -24,6 +24,7 @@
                     <th>Blue 1</th>
                     <th>Blue 2</th>
                     <th>Blue 3</th>
+                    <th></th>
                 </tr>
                 <tbody id="tbody">
                     <tr class="tr">
@@ -31,7 +32,7 @@
                             <input class="timeInput" id="timeInput_0" type="time">
                         </td>
                         <td class = "matchVideo" id="matchVideo_0">
-                            <a href="">link</a>
+                            <a id="linkID" href="" onclick="insertLink()">link</a>
                         </td>
                         <td class = "matchNumber">
                             <input class="matchInput" id="matchInput_0" type="number">
@@ -54,6 +55,10 @@
                         <td class = "blueAlliance">
                             <input class="blueInput" id="blue3_0" type="number">
                         </td>
+                        <td>
+                            <button id="removeRowButton_0" onclick="removeRow()">delete</button>
+                            <button id="editRowButon_0" onclick="editRow()">edit</button>
+                        </td>
                     </tr>
                     
                 </tbody>
@@ -62,7 +67,7 @@
             <div class="buttonContainer">
                 <div class="buttonGroup">
                     <button id = "addRowButton" onclick="addRow()">Add Row</button>
-                    <button id = "removeRowButton" onclick="removeRow()">Remove Row</button>
+                    
                 </div>
                 <button id = "saveButton" onclick="saveInput()">Save</button>
             </div>
