@@ -47,8 +47,8 @@ function addRow(){
 
 //TODO: remove designated row
 function removeRow(){
-    let desigRow = tr[tr.length - 1];
-    console.log(desigRow.parentNode.removeChild(desigRow));
+    let currentChild = tr[tr.length - 1];
+    console.log(currentChild.parentNode.removeChild(currentChild));
     rowCount--;
 }
 
