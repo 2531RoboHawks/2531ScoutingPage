@@ -14,7 +14,7 @@ function addRow(){
             <input class="timeInput" id="timeInput_${rowCount}" type="time">
         </td>
         <td class = "matchVideo" id="matchVideo_${rowCount}">
-            <a id="link_${rowCount}" href="" onclick="insertLink('link_${rowCount}')">link</a>
+            <a href="">link</a>
         </td>
         <td class = "matchNumber">
             <input class="matchInput" id="matchInput_${rowCount}" type="number">
