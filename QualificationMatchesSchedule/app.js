@@ -9,7 +9,7 @@ let rowCount = 1;
 
 function addRow(){
     tbody.innerHTML += `
-    <tr class="tr_${rowCount}">
+    <tr class="tr">
         <td class = "time">
             <input class="timeInput" id="timeInput_${rowCount}" type="time">
         </td>
