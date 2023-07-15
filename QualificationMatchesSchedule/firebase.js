@@ -46,7 +46,5 @@ const database = getFirestore(firebase);
   //   const matchScheduleDataList = matchScheduleData.docs.map(doc => doc.data());
   //   return matchScheduleDataList;
   // }
-
-const matchSchedule = getMatchSchedule(database);
-
-console.log(matchSchedule);
+  //const matchSchedule = getMatchSchedule(database);
+  //console.log(matchSchedule);
