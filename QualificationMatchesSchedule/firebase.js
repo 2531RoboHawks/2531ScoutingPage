@@ -33,12 +33,12 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-const firebase = initializeApp(firebaseConfig);
-const analytics = getAnalytics(firebase);
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
 
-//TODO: sucessfully get data from Firebase
-const database = getFirestore(firebase);
+const db = getFirestore(app);
 
+<<<<<<< HEAD
 //Example:
   // async function getMatchSchedule(database) {
   //   const matchSchedule = collection(database, 'matchSchedule');
@@ -48,3 +48,16 @@ const database = getFirestore(firebase);
   // }
   //const matchSchedule = getMatchSchedule(database);
   //console.log(matchSchedule);
+=======
+// Ex: Get a list of cities from your databasegetCities
+async function getMatchSchedule(db) {
+  const matchSchedule = collection(db, 'matchSchedule');
+  const matchScheduleData = await getDocs(matchSchedule);
+  const matchScheduleDataList = matchScheduleData.docs.map(doc => doc.data());
+  return matchScheduleDataList;
+}
+
+const matchSchedule = getMatchSchedule(db);
+
+console.log(matchSchedule);
+>>>>>>> parent of 612d8c0 (add todos)
