@@ -51,6 +51,7 @@ function removeRow(){
         console.log(currentChild.parentNode.removeChild(currentChild));
         rowCount--;
     }
+    console.log("remove row");
 }
 function insertLink(linkID) {
     
