@@ -45,13 +45,14 @@ function addRow(){
     rowCount++;
 }
 
+//TODO: remove designated row
 function removeRow(){
-    if(tr.length > 1){
-        let currentChild = tr[tr.length - 1];
-        console.log(currentChild.parentNode.removeChild(currentChild));
-        rowCount--;
-    }
+    let currentChild = tr[tr.length - 1];
+    console.log(currentChild.parentNode.removeChild(currentChild));
+    rowCount--;
 }
+
+//TODO: make this work properly
 function insertLink(linkID) {
     
     let ourLink = document.querySelector(`#${linkID}`);
@@ -61,6 +62,7 @@ function insertLink(linkID) {
     console.log(askLink);
 }
 
+//TODO: succesfully save data to Firebase
 function saveInput() {
     for(let i = 0; i < tr.length; i++){
         let timeInput = document.getElementById("timeInput_"+i).value;
@@ -73,6 +75,4 @@ function saveInput() {
         matchInput.innerHTML = matchInput;
         console.log(matchInput);
     }
-
-    
 }

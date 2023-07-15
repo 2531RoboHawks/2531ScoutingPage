@@ -33,19 +33,20 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
+const firebase = initializeApp(firebaseConfig);
+const analytics = getAnalytics(firebase);
 
-const db = getFirestore(app);
+//TODO: sucessfully get data from Firebase
+const database = getFirestore(firebase);
 
-// Ex: Get a list of cities from your databasegetCities
-async function getMatchSchedule(db) {
-  const matchSchedule = collection(db, 'matchSchedule');
-  const matchScheduleData = await getDocs(matchSchedule);
-  const matchScheduleDataList = matchScheduleData.docs.map(doc => doc.data());
-  return matchScheduleDataList;
-}
+//Example:
+  // async function getMatchSchedule(database) {
+  //   const matchSchedule = collection(database, 'matchSchedule');
+  //   const matchScheduleData = await getDocs(matchSchedule);
+  //   const matchScheduleDataList = matchScheduleData.docs.map(doc => doc.data());
+  //   return matchScheduleDataList;
+  // }
 
-const matchSchedule = getMatchSchedule(db);
+const matchSchedule = getMatchSchedule(database);
 
 console.log(matchSchedule);
