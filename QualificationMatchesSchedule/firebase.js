@@ -38,7 +38,6 @@ const analytics = getAnalytics(app);
 
 const db = getFirestore(app);
 
-<<<<<<< HEAD
 //Example:
   // async function getMatchSchedule(database) {
   //   const matchSchedule = collection(database, 'matchSchedule');
@@ -48,16 +47,4 @@ const db = getFirestore(app);
   // }
   //const matchSchedule = getMatchSchedule(database);
   //console.log(matchSchedule);
-=======
-// Ex: Get a list of cities from your databasegetCities
-async function getMatchSchedule(db) {
-  const matchSchedule = collection(db, 'matchSchedule');
-  const matchScheduleData = await getDocs(matchSchedule);
-  const matchScheduleDataList = matchScheduleData.docs.map(doc => doc.data());
-  return matchScheduleDataList;
-}
 
-const matchSchedule = getMatchSchedule(db);
-
-console.log(matchSchedule);
->>>>>>> parent of 612d8c0 (add todos)
