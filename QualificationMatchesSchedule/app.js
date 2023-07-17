@@ -11,7 +11,7 @@ function addRow(){
     tbody.innerHTML += `
     <tr class="tr">
         <td class = "time">
-            <input class="timeInput" id="timeInput_${rowCount}" type="time">
+            <input class="timeInput" id="timeInput_${rowCount}" type="text">
         </td>
         <td class = "matchVideo">
             <input class="linkInput" id="link_${rowCount}" type="url">

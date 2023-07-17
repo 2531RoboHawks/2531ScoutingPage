@@ -30,7 +30,7 @@ h1 {
 .qualContainer{
     color: white;
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
     justify-content: center;
     align-items: center;
 }
@@ -39,7 +39,7 @@ h1 {
     width: 100%;
     margin-top: 10px;
     display: flex;
-    flex: 1;
+    /* flex: 1; */
     justify-content: space-between;
     align-items: center;
     
@@ -57,15 +57,20 @@ table, th, td {
 
 .linkInput {
     background-color: gold;
+    border-color: purple;
+    width: 70px;
 }
 
 .timeInput {
     background-color: gold;
-    width: 100px;
+    border-color: purple;
+    text-align: center;
+    width: 35px;
     
 }
 .matchInput{
     background-color: gold;
+    border-color: purple;
     width: 30px;
 }
 
@@ -76,7 +81,6 @@ table, th, td {
 .redInput{
     background-color: red;
     border-color: red;
-    color: white;
     width: 45px;
     text-align: center;
 }
@@ -87,8 +91,15 @@ table, th, td {
 
 .blueInput{
     background-color: blue;
-    color: white;
     border-color: blue;
     width: 45px;
     text-align: center;
+}
+
+#pracSchedLink {
+    margin-bottom: 20px;
+    float: left;
+    background-color: gold;
+    border: 5px purple;
+    font-size: large;
 }
