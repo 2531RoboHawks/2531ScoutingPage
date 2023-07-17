@@ -14,10 +14,10 @@ nav {
     display: flex;
     font-size:larger;
     padding: 20px;
-    font-family: 'Courier New';
+    font-family: arial;
     font-weight: 600;
     margin-bottom: 20px;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 h1 {
