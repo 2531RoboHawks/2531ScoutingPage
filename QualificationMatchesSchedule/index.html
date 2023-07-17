@@ -8,20 +8,22 @@
     <title>Qualification Matches Schedule</title>
 </head>
 
-<body>
+<body style="background-color: purple;">
      <header>
         <img src="Images/robohawksLogo.png" alt="robohawks-logo">
      </header>   
 
     <nav>
-        <a href="">Home</a>
-        <a href="">Pit Scouting Form</a>
-        <a href="">Instand Scouting Form</a>
-        <a href="">Pit Scouting Data</a>
-        <a href="">Instand Scouting Data</a>
+        <ul><li><a href="">Home</a></li><br>
+        <li><a href="">Pit Scouting Form</a></li><br>
+        <li><a href="">Instand Scouting Form</a></li><br>
+        <li><a href="">Pit Scouting Data</a></li><br>
+        <li><a href="">Instand Scouting Data</a></li>
+    </ul>
+        
     </nav>
-    <h1>Qualification Matches Schedule</h1>
     <section>
+        <h1>Qualification Matches Schedule</h1>
         <div class="qualContainer">
         <div class="table" width="500px" height="100px">
             <table id = "matchesTable">
@@ -67,8 +69,8 @@
                             <input class="blueInput" id="blue3_0" type="number">
                         </td>
                         <td>
-                            <button id="removeRowButton_0" onclick="removeRow()">delete</button>
-                            <button id="editRowButon_0" onclick="editRow()">edit</button>
+                            <button id="removeRowButton_0" onclick="removeRow()" style="background-color: gold;">delete</button>
+                            <button id="editRowButon_0" onclick="editRow()" style="background-color: gold;">edit</button>
                         </td>
                     </tr>
                     
@@ -76,8 +78,8 @@
             </table>
     
             <div class="buttonContainer">
-                <button id = "addRowButton" onclick="addRow()">Add Row</button>
-                <input id="saveButton" type="submit" value="Save" onclick="saveInput()">
+                <button id = "addRowButton" onclick="addRow()" style="background-color: gold;">Add Row</button>
+                <input id="saveButton" type="submit" value="Save" onclick="saveInput()" style="background-color: gold;">
             </div>
         </div>
         
