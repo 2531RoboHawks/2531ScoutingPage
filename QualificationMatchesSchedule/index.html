@@ -9,14 +9,25 @@
 </head>
 
 <body>
-    <h1 style="text-align:center">Qualification Matches Schedule</h1>
-        
-    <div class="qualContainer">
+     <header>
+        <img src="Images/robohawksLogo.png" alt="robohawks-logo">
+     </header>   
+
+    <nav>
+        <a href="">Home</a>
+        <a href="">Pit Scouting Form</a>
+        <a href="">Instand Scouting Form</a>
+        <a href="">Pit Scouting Data</a>
+        <a href="">Instand Scouting Data</a>
+    </nav>
+    <h1>Qualification Matches Schedule</h1>
+    <section>
+        <div class="qualContainer">
         <div class="table" width="500px" height="100px">
             <table id = "matchesTable">
                 <tr>
                     <th>Time</th>
-                    <th>Video</th>
+                    <th>Video Link</th>
                     <th>Match</th>
                     <th>Red 1</th>
                     <th>Red 2</th>
@@ -31,8 +42,8 @@
                         <td class = "time">
                             <input class="timeInput" id="timeInput_0" type="time">
                         </td>
-                        <td class = "matchVideo" id="matchVideo_0">
-                            <a id="linkID" href="" onclick="insertLink()">link</a>
+                        <td class = "matchVideo">
+                            <input class="linkInput" id="link_0" type="url">
                         </td>
                         <td class = "matchNumber">
                             <input class="matchInput" id="matchInput_0" type="number">
@@ -65,15 +76,14 @@
             </table>
     
             <div class="buttonContainer">
-                <div class="buttonGroup">
-                    <button id = "addRowButton" onclick="addRow()">Add Row</button>
-                    
-                </div>
-                <button id = "saveButton" onclick="saveInput()">Save</button>
+                <button id = "addRowButton" onclick="addRow()">Add Row</button>
+                <input id="saveButton" type="submit" value="Save" onclick="saveInput()">
             </div>
         </div>
         
     </div>
+    </section>
+    
 
     <script src="app.js"></script>
     <script type="module" src="./firebase.js"></script>

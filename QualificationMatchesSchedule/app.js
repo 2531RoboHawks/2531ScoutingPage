@@ -13,8 +13,8 @@ function addRow(){
         <td class = "time">
             <input class="timeInput" id="timeInput_${rowCount}" type="time">
         </td>
-        <td class = "matchVideo" id="matchVideo_${rowCount}">
-            <a id="linkID" href="">link</a>
+        <td class = "matchVideo">
+            <input class="linkInput" id="link_${rowCount}" type="url">
         </td>
         <td class = "matchNumber">
             <input class="matchInput" id="matchInput_${rowCount}" type="number">
@@ -60,27 +60,19 @@ function removeRow(){
     getID();
 }
 
-//TODO: make href hold user input, even if temporarily.
-function insertLink(linkID) {
-    let ourLink = document.querySelector(`#${linkID}`);
-    let askLink = prompt("insert video link here:");
-    ourLink.innerHTML = askLink;
-    ourLink.href = askLink;
-    console.log(askLink);
-}
 
 //TODO: figure out how to save data to firebase.
 function saveInput() {
     console.log("save");
     for(let i = 0; i < tr.length; i++){
         let timeInput = document.getElementById("timeInput_"+i).value;
-        timeInput.innerHTML = timeInput;
+        //timeInput.innerHTML = timeInput;
         console.log(timeInput);
     }
 
     for(let i = 0; i < tr.length; i++){
         let matchInput = document.getElementById("matchInput_"+i).value;
-        matchInput.innerHTML = matchInput;
+        //matchInput.innerHTML = matchInput;
         console.log(matchInput);
     }
     

@@ -1,7 +1,36 @@
+body {
+    background-color: purple;
+}
+
+header {
+    background-color: black;
+    justify-content: center;
+    display: flex;
+    padding: 20px;
+}
+
+nav {
+    background-color: gold;
+    padding: 25px;
+    border-radius: 10px;
+    justify-content: space-evenly;
+    display: flex;
+    font-size:larger;
+    font-weight:600;
+    margin-bottom: 50px;
+}
+
+section {
+    color: white;
+}
+
+
 h1 {
     font-family: monospace;
     text-align: center;
+    color: white;
 }
+
 
 .qualContainer{
     display: flex;
@@ -14,13 +43,10 @@ h1 {
     width: 100%;
     margin-top: 10px;
     display: flex;
-    justify-content: space-between;
-}
-
-.buttonGroup{
     flex: 1;
-    display: flex;
+    justify-content: space-between;
     align-items: center;
+    
 }
 
 #addRowButton{
@@ -28,21 +54,27 @@ h1 {
 }
 
 table, th, td {
-    border:1px solid black;
+    border:1px solid white;
     text-align: center;
 }
 
-.matchVideo {
-    font-size: small;
+.linkInput {
+    color: white;
+    background-color: purple;
+    border-color: purple;
 }
 
 .timeInput {
-    border-color: white;
+    color: white;
+    background-color: purple;
+    border-color: purple;
     width: 100px;
     
 }
 .matchInput{
-    border-color: white;
+    color: white;
+    background-color: purple;
+    border-color: purple;
     width: 30px;
 }
 
@@ -54,6 +86,7 @@ table, th, td {
 .redInput{
     background-color: red;
     border-color: red;
+    color: white;
     width: 60px;
 }
 
@@ -64,6 +97,7 @@ table, th, td {
 
 .blueInput{
     background-color: blue;
+    color: white;
     border-color: blue;
     width: 60px;
 }
