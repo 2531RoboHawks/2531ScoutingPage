@@ -58,6 +58,7 @@ table, th, td {
 .linkInput {
     background-color: gold;
     border-color: purple;
+    text-align: center;
     width: 70px;
 }
 
@@ -71,6 +72,7 @@ table, th, td {
 .matchInput{
     background-color: gold;
     border-color: purple;
+    text-align: center;
     width: 40px;
 }
 
