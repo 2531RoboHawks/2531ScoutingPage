@@ -15,13 +15,14 @@ nav {
     font-weight: 600;
     /* margin-bottom: 50px; */
     float: left;
-    min-width: 15%;
+    max-width: 15%;
     height: fit-content;
 }
 
 section {
     color: white;
     float: right;
+    max-width: 85%;
 }
 
 
