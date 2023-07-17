@@ -11,12 +11,11 @@ nav {
     border-radius: 10px;
     display: flex;
     font-size:larger;
+    padding: 20px;
     font-family: 'Courier New';
     font-weight: 600;
-    /* margin-bottom: 50px; */
-    float: left;
-    max-width: 15%;
-    height: fit-content;
+    margin-bottom: 20px;
+    justify-content: space-between;
 }
 
 section {
