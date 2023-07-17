@@ -38,8 +38,8 @@ function addRow(){
             <input class="blueInput" id="blue3_${rowCount}" type="number">
         </td>
         <td>
-            <button id="removeRowButton_${rowCount}" onclick="removeRow()">delete</button>
-            <button id="editRowButon_${rowCount}" onclick="editRow()">edit</button>
+            <button id="removeRowButton_${rowCount}" onclick="removeRow()" style="background-color: gold;">delete</button>
+            <button id="editRowButon_${rowCount}" onclick="editRow()" style="background-color: gold;">edit</button>
         </td>
     </tr>`;
     rowCount++;

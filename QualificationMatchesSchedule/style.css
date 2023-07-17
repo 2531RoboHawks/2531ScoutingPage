@@ -20,10 +20,6 @@ nav {
     justify-content: space-between;
 }
 
-section {
-    color: white;
-}
-
 h1 {
     font-size: 200%;
     font-family: monospace;
@@ -60,45 +56,39 @@ table, th, td {
 }
 
 .linkInput {
-    color: white;
-    background-color: purple;
-    border-color: purple;
+    background-color: gold;
 }
 
 .timeInput {
-    color: white;
-    background-color: purple;
-    border-color: purple;
+    background-color: gold;
     width: 100px;
     
 }
 .matchInput{
-    color: white;
-    background-color: purple;
-    border-color: purple;
+    background-color: gold;
     width: 30px;
 }
 
 .redAlliance{
-    background-color: red;
-    font-size: 20px;
+    /* background-color: red; */
 }
 
 .redInput{
     background-color: red;
     border-color: red;
     color: white;
-    width: 60px;
+    width: 45px;
+    text-align: center;
 }
 
 .blueAlliance{
-    background-color: blue;
-    font-size: 20px;
+    /* background-color: blue; */
 }
 
 .blueInput{
     background-color: blue;
     color: white;
     border-color: blue;
-    width: 60px;
+    width: 45px;
+    text-align: center;
 }
