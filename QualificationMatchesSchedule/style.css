@@ -85,6 +85,8 @@ table, th, td {
 
 .time {
     background-color: gold;
+    color: purple;
+    font-weight: 550;
 }
 
 .matchInput{
@@ -96,6 +98,8 @@ table, th, td {
 
 .matchNumber {
     background-color: gold;
+    color: purple;
+    font-weight: 550;
 }
 
 .redInput{
@@ -108,6 +112,7 @@ table, th, td {
 .redAlliance {
     background-color: red;
     color: white;
+    font-weight: 550;
 }
 
 .blueInput{
@@ -120,4 +125,5 @@ table, th, td {
 .blueAlliance {
     background-color: blue;
     color: white;
+    font-weight: 550;
 }
