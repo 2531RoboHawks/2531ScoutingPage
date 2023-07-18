@@ -15,96 +15,121 @@ import { getDatabase, ref, push } from "https://www.gstatic.com/firebasejs/10.0.
     // import {} from "https://www.gstatic.com/firebasejs/${FIREBASE_VERSION}/firebase-database.js";
 
 
-const appSetting = {
+const appSettings = {
     databaseURL: "https://scoutingapp-e16c4-default-rtdb.firebaseio.com/"
 }
       
 // Initialize Firebase
-const app = initializeApp(appSetting);
+const app = initializeApp(appSettings);
 
 const database = getDatabase(app);
-const qualMatchSchedule = ref(database, "qualMatchSchedule");
+// const linkDatabase = getDatabase(app);
 
+
+const qualTime = ref(database, "qualTime");
+const qualLink = ref(database, "qualLink");
+const qualMatch = ref(database, "qualMatch");
+const qualRed1 = ref(database, "qualRed1");
+const qualRed2 = ref(database, "qualRed2");
+const qualRed3 = ref(database, "qualRed3");
+const qualBlue1 = ref(database, "qualBlue1");
+const qualBlue2 = ref(database, "qualBlue2");
+const qualBlue3 = ref(database, "qualBlue3");
 
 const tbody = document.getElementById("tbody");
 const tr = document.getElementsByClassName("tr");
+const addRowButton = document.getElementById("addRowButton");
+const saveButton = document.getElementById("saveButton");
 
-let timeRow = document.getElementById("time");
-let matchRow = document.getElementById("matchNumber");
-let rowCount = 1;
 
-//TODO: add row from a form with user input
-function addRow(){
+
+addRowButton.addEventListener("click", function() {
+    let rowCount = 1;
     tbody.innerHTML += `
     <tr class="tr">
         <td class = "time">
-            <input class="timeInput" id="timeInput_${rowCount}" type="text">
+            <a id="timeInput_${rowCount}"></a>
         </td>
         <td class = "matchVideo">
-            <input class="linkInput" id="link_${rowCount}" type="url">
+            <a id="linkInput_${rowCount}"></a>
         </td>
         <td class = "matchNumber">
-            <input class="matchInput" id="matchInput_${rowCount}" type="number">
-        </td>
-        <td class = "redAlliance" href="">
-            <input class="redInput" id="red1_${rowCount}" type="number">
+            <a id="matchInput_${rowCount}" ></a>
         </td>
         <td class = "redAlliance">
-            <input class="redInput" id="red2_${rowCount}" type="number">
+            <a id="red1_${rowCount}" ></a>
         </td>
         <td class = "redAlliance">
-            <input class="redInput" id="red3_${rowCount}" type="number">
+            <a id="red2_${rowCount}" ></a>
+        </td>
+        <td class = "redAlliance">
+            <a id="red3_${rowCount}" ></a>
         </td>
         <td class = "blueAlliance">
-            <input class="blueInput" id="blue1_${rowCount}" type="number">
+            <a id="blue1_${rowCount}" ></a>
         </td>
         <td class = "blueAlliance">
-            <input class="blueInput" id="blue2_${rowCount}" type="number">
+            <a id="blue2_${rowCount}" ></a>
         </td>
         <td class = "blueAlliance">
-            <input class="blueInput" id="blue3_${rowCount}" type="number">
+            <a id="blue3_${rowCount}" ></a>
         </td>
-        <td>
-            <button id="removeRowButton_${rowCount}" onclick="removeRow()" style="background-color: gold;">delete</button>
-            <button id="editRowButon_${rowCount}" onclick="editRow()" style="background-color: gold;">edit</button>
-        </td>
-    </tr>`;
+    </tr>`;  
     rowCount++;
-}
-
-function getID(){
-    //TODO: figure out how to get HTML IDs
-}
-
-//TODO: remove designated row
-function removeRow(){
-    console.log("remove row");
-    if(tr.length > 1){
-        let desigRow = tr[tr.length - 1];
-        console.log(desigRow.parentNode.removeChild(desigRow));
-        rowCount--;
-    }
-    getID();
-}
+});
 
 
-//TODO: figure out how to save data to firebase.
-function saveInput() {
-    console.log("save");
-    for(let i = 0; i < tr.length; i++){
-        let timeInput = document.getElementById("timeInput_"+i).value;
-        //timeInput.innerHTML = timeInput;
-        console.log(timeInput);
-    }
+// function removeRow(){
+//     console.log("remove row");
+//     if(tr.length > 1){
+//         let desigRow = tr[tr.length - 1];
+//         console.log(desigRow.parentNode.removeChild(desigRow));
+//         rowCount--;
+//     }
+//     getID();
+// }
+
+
 
     for(let i = 0; i < tr.length; i++){
-        let matchInput = document.getElementById("matchInput_"+i).value;
-        //matchInput.innerHTML = matchInput;
-        console.log(matchInput);
-    }
-    
-}
+        saveButton.addEventListener("click", function() {
+            console.log("save_"+i);
 
-function editRow() {
-    console.log("edit row");
-}
+            let timeInput = document.getElementById("timeInput").value;
+            push(qualTime, timeInput);
+            document.getElementById("timeInput_"+i).innerHTML = timeInput;
+
+            let linkInput = document.getElementById("linkInput").value;
+            push(qualLink, linkInput);
+            document.getElementById("linkInput_"+i).innerHTML = linkInput;
+
+            let matchInput = document.getElementById("matchInput").value;
+            push(qualMatch, matchInput);
+            document.getElementById("matchInput_"+i).innerHTML = matchInput;
+
+            let red1 = document.getElementById("red1").value;
+            push(qualRed1, red1);
+            document.getElementById("red1_"+i).innerHTML = matchInput;
+
+            let red2 = document.getElementById("red2").value;
+            push(qualRed2, red2);
+            document.getElementById("red2_"+i).innerHTML = matchInput;
+
+            let red3 = document.getElementById("red3").value;
+            push(qualRed3, red3);
+            document.getElementById("red3_"+i).innerHTML = matchInput;
+
+            let blue1 = document.getElementById("blue1").value;
+            push(qualBlue1, blue1);
+            document.getElementById("blue1_"+i).innerHTML = matchInput;
+
+            let blue2 = document.getElementById("blue2").value;
+            push(qualBlue2, blue2);
+            document.getElementById("blue2_"+i).innerHTML = matchInput;
+
+            let blue3 = document.getElementById("blue3").value;
+            push(qualBlue3, blue3);
+            document.getElementById("blue3_"+i).innerHTML = matchInput;
+        });
+        i++;
+    }

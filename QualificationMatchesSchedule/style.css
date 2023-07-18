@@ -20,6 +20,16 @@ nav {
     justify-content: space-around;
 }
 
+#pracSchedLink {
+    margin-top: 5px;
+    float: left;
+    background-color: gold;
+    border: purple;
+    font-size: large;
+    border-radius: 10px;
+    padding: 3px;
+}
+
 h1 {
     margin-top: 5px;
     font-size: 200%;
@@ -31,7 +41,6 @@ h1 {
 .qualContainer{
     color: white;
     display: flex;
-    /* flex-direction: column; */
     justify-content: center;
     align-items: center;
 }
@@ -40,7 +49,6 @@ h1 {
     width: 100%;
     margin-top: 10px;
     display: flex;
-    /* flex: 1; */
     justify-content: space-between;
     align-items: center;
     
@@ -48,7 +56,15 @@ h1 {
 }
 
 #addRowButton{
-    margin-right: 10px;
+    background-color: gold;
+}
+
+#removeRowButton{
+    background-color: gold;
+}
+
+#saveButton {
+    background-color: gold;
 }
 
 table, th, td {
@@ -88,14 +104,4 @@ table, th, td {
     border-color: blue;
     width: 45px;
     text-align: center;
-}
-
-#pracSchedLink {
-    margin-top: 5px;
-    float: left;
-    background-color: gold;
-    border: purple;
-    font-size: large;
-    border-radius: 10px;
-    padding: 3px;
 }

@@ -36,40 +36,64 @@
                     <th>Blue 1</th>
                     <th>Blue 2</th>
                     <th>Blue 3</th>
-                    <th></th>
                 </tr>
                 <tbody id="tbody">
-                    <tr class="tr">
+                    <tr>
                         <td class = "time">
-                            <input class="timeInput" id="timeInput_0" type="text">
+                            <input class="timeInput" id="timeInput" type="text">
                         </td>
                         <td class = "matchVideo">
-                            <input class="linkInput" id="link_0" type="url">
+                            <input class="linkInput" id="linkInput" type="url">
                         </td>
                         <td class = "matchNumber">
-                            <input class="matchInput" id="matchInput_0" type="number">
-                        </td>
-                        <td class = "redAlliance" href="">
-                            <input class="redInput" id="red1_0" type="number">
+                            <input class="matchInput" id="matchInput" type="number">
                         </td>
                         <td class = "redAlliance">
-                            <input class="redInput" id="red2_0" type="number">
+                            <input class="redInput" id="red1" type="number">
                         </td>
                         <td class = "redAlliance">
-                            <input class="redInput" id="red3_0" type="number">
+                            <input class="redInput" id="red2" type="number">
+                        </td>
+                        <td class = "redAlliance">
+                            <input class="redInput" id="red3" type="number">
                         </td>
                         <td class = "blueAlliance">
-                            <input class="blueInput" id="blue1_0" type="number">
+                            <input class="blueInput" id="blue1" type="number">
                         </td>
                         <td class = "blueAlliance">
-                            <input class="blueInput" id="blue2_0" type="number">
+                            <input class="blueInput" id="blue2" type="number">
                         </td>
                         <td class = "blueAlliance">
-                            <input class="blueInput" id="blue3_0" type="number">
+                            <input class="blueInput" id="blue3" type="number">
                         </td>
-                        <td>
-                            <button id="removeRowButton_0" onclick="removeRow()" style="background-color: gold;">delete</button>
-                            <button id="editRowButon_0" onclick="editRow()" style="background-color: gold;">edit</button>
+                    </tr>
+                    <tr class="tr">
+                        <td class = "time">
+                            <a id="timeInput_0"></a>
+                        </td>
+                        <td class = "matchVideo">
+                            <a id="linkInput_0"></a>
+                        </td>
+                        <td class = "matchNumber">
+                            <a id="matchInput_0" ></a>
+                        </td>
+                        <td class = "redAlliance">
+                            <a id="red1_0" ></a>
+                        </td>
+                        <td class = "redAlliance">
+                            <a id="red2_0" ></a>
+                        </td>
+                        <td class = "redAlliance">
+                            <a id="red3_0" ></a>
+                        </td>
+                        <td class = "blueAlliance">
+                            <a id="blue1_0" ></a>
+                        </td>
+                        <td class = "blueAlliance">
+                            <a id="blue2_0" ></a>
+                        </td>
+                        <td class = "blueAlliance">
+                            <a id="blue3_0" ></a>
                         </td>
                     </tr>
                     
@@ -77,8 +101,9 @@
             </table>
     
             <div class="buttonContainer">
-                <button id = "addRowButton" onclick="addRow()" style="background-color: gold;">Add Row</button>
-                <input id="saveButton" type="submit" value="Save" onclick="saveInput()" style="background-color: gold;">
+                <button id = "addRowButton">Add Row</button>
+                <button id = "removeRowButton">Remove Row</button>
+                <button id = "saveButton">Save</button>
             </div>
         </div>
         
