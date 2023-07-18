@@ -1,6 +1,6 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-app.js";
-import { getDatabase, ref, push } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-database.js";
+import { getDatabase, ref, push, onValue } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-database.js";
 
 // Follow this pattern to import other Firebase services
     // import {} from "https://www.gstatic.com/firebasejs/${FIREBASE_VERSION}/firebase-analytics.js";
@@ -23,7 +23,6 @@ const appSettings = {
 const app = initializeApp(appSettings);
 
 const database = getDatabase(app);
-
 
 const qualTime = ref(database, "qualTime");
 const qualLink = ref(database, "qualLink");

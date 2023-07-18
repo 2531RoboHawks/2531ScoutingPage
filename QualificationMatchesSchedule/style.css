@@ -18,6 +18,7 @@ nav {
     font-weight: 600;
     margin-bottom: 20px;
     justify-content: space-around;
+    gap: 50px;
 }
 
 #pracSchedLink {
@@ -73,6 +74,7 @@ table, th, td {
     background-color: gold;
     color: purple;
     font-weight: 550;
+    flex-wrap: wrap;
     max-width: 95px;
 }
 
