@@ -42,7 +42,10 @@ const saveButton = document.getElementById("saveButton");
 
 let rowCount = 1;
 
-//Code for removeRow
+//TODO: make matchInputs not sync with all teamInputs
+//TODO: make video link not shown in other columns when it's too long
+
+//Codes for removeRowButton: removes last row
 removeRowButton.addEventListener("click", function() {
     if(tr.length > 1){
         let desigRow = tr[tr.length - 2];

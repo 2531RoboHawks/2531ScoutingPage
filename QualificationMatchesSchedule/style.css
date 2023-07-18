@@ -39,15 +39,14 @@ h1 {
 }
 
 .qualContainer{
-    color: white;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .buttonContainer{
-    width: 100%;
     margin-top: 10px;
+    float: right;
 }
 
 #removeRowButton{
@@ -64,35 +63,61 @@ table, th, td {
 }
 
 .linkInput {
-    background-color: gold;
-    border-color: purple;
+    /* background-color: gold; */
+    border-color: gold;
     text-align: center;
     width: 70px;
 }
 
-.timeInput {
+.matchVideo {
     background-color: gold;
-    border-color: purple;
+    color: purple;
+    font-weight: 550;
+    max-width: 70px;
+}
+
+.timeInput {
+    /* background-color: gold; */
+    border-color: gold;
     text-align: center;
     width: 35px;
-    
 }
-.matchInput{
+
+.time {
     background-color: gold;
-    border-color: purple;
+}
+
+.matchInput{
+    /* background-color: gold; */
+    border-color: gold;
     text-align: center;
     width: 40px;
 }
 
+.matchNumber {
+    background-color: gold;
+}
+
 .redInput{
-    background-color: red;
+    /* background-color: red; */
     border-color: red;
     width: 45px;
     text-align: center;
 }
+
+.redAlliance {
+    background-color: red;
+    color: white;
+}
+
 .blueInput{
-    background-color: blue;
+    /* background-color: purple; */
     border-color: blue;
     width: 45px;
     text-align: center;
+}
+
+.blueAlliance {
+    background-color: blue;
+    color: white;
 }
