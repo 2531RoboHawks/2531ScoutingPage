@@ -42,7 +42,7 @@ const saveButton = document.getElementById("saveButton");
 
 let rowCount = 1;
 
-//TODO: access folders
+//TODO: access folders from outside path, and insert link
 //TODO: make matchInputs not sync with all teamInputs
 //TODO: make video link not shown in other columns when it's too long
 
