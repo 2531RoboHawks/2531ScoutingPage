@@ -42,7 +42,6 @@ const saveButton = document.getElementById("saveButton");
 let rowCount = 1;
 
 //TODO: access folders from outside path, and insert link
-//TODO: make matchInputs not sync with all teamInputs
 //TODO: make video link not shown in other columns when it's too long
 
 //Codes for removeRowButton: removes last row
@@ -73,27 +72,27 @@ saveButton.addEventListener("click", function() {
 
     let red1 = document.getElementById("red1").value;
     push(qualRed1, red1);
-    document.getElementById("red1_"+(rowCount-1)).innerHTML = matchInput;
+    document.getElementById("red1_"+(rowCount-1)).innerHTML = red1;
 
     let red2 = document.getElementById("red2").value;
     push(qualRed2, red2);
-    document.getElementById("red2_"+(rowCount-1)).innerHTML = matchInput;
+    document.getElementById("red2_"+(rowCount-1)).innerHTML = red2;
 
     let red3 = document.getElementById("red3").value;
     push(qualRed3, red3);
-    document.getElementById("red3_"+(rowCount-1)).innerHTML = matchInput;
+    document.getElementById("red3_"+(rowCount-1)).innerHTML = red3;
 
     let blue1 = document.getElementById("blue1").value;
     push(qualBlue1, blue1);
-    document.getElementById("blue1_"+(rowCount-1)).innerHTML = matchInput;
+    document.getElementById("blue1_"+(rowCount-1)).innerHTML = blue1;
 
     let blue2 = document.getElementById("blue2").value;
     push(qualBlue2, blue2);
-    document.getElementById("blue2_"+(rowCount-1)).innerHTML = matchInput;
+    document.getElementById("blue2_"+(rowCount-1)).innerHTML = blue2;
 
     let blue3 = document.getElementById("blue3").value;
     push(qualBlue3, blue3);
-    document.getElementById("blue3_"+(rowCount-1)).innerHTML = matchInput;
+    document.getElementById("blue3_"+(rowCount-1)).innerHTML = blue3;
 
     tbody.innerHTML += `
     <tr class="tr">
