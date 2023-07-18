@@ -66,14 +66,14 @@ table, th, td {
     /* background-color: gold; */
     border-color: gold;
     text-align: center;
-    width: 70px;
+    width: 80px;
 }
 
 .matchVideo {
     background-color: gold;
     color: purple;
     font-weight: 550;
-    max-width: 72px;
+    max-width: 90px;
 }
 
 .timeInput {
