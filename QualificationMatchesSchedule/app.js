@@ -47,7 +47,7 @@ removeRowButton.addEventListener("click", function() {
     if(tr.length > 1){
         let desigRow = tr[tr.length - 2];
         console.log(desigRow.parentNode.removeChild(desigRow));
-        //rowCount--; //Somehow commenting this out made it work, but row number kept going.
+        //rowCount--; //Somehow leaving this out made it work, but row number kept going.
         console.log("remove row"+(rowCount));
     }
 });
@@ -94,32 +94,23 @@ saveButton.addEventListener("click", function() {
 
     tbody.innerHTML += `
     <tr class="tr">
-        <td class = "time">
-            <a id="timeInput_${rowCount}"></a>
+        <td class = "time" id="timeInput_${rowCount}">
         </td>
-        <td class = "matchVideo">
-            <a id="linkInput_${rowCount}"></a>
+        <td class = "matchVideo" id="linkInput_${rowCount}">
         </td>
-        <td class = "matchNumber">
-            <a id="matchInput_${rowCount}" ></a>
+        <td class = "matchNumber" id="matchInput_${rowCount}" >
         </td>
-        <td class = "redAlliance">
-            <a id="red1_${rowCount}" ></a>
+        <td class = "redAlliance" id="red1_${rowCount}">
         </td>
-        <td class = "redAlliance">
-            <a id="red2_${rowCount}" ></a>
+        <td class = "redAlliance" id="red2_${rowCount}">
         </td>
-        <td class = "redAlliance">
-            <a id="red3_${rowCount}" ></a>
+        <td class = "redAlliance" id="red3_${rowCount}">
         </td>
-        <td class = "blueAlliance">
-            <a id="blue1_${rowCount}" ></a>
+        <td class = "blueAlliance" id="blue1_${rowCount}">
         </td>
-        <td class = "blueAlliance">
-            <a id="blue2_${rowCount}" ></a>
+        <td class = "blueAlliance" id="blue2_${rowCount}">
         </td>
-        <td class = "blueAlliance">
-            <a id="blue3_${rowCount}" ></a>
+        <td class = "blueAlliance" id="blue3_${rowCount}">
         </td>
     </tr>`;  
     rowCount++;
