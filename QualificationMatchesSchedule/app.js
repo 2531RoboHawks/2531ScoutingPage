@@ -1,6 +1,33 @@
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-app.js";
+import { getDatabase, ref, push } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-database.js";
+
+// Follow this pattern to import other Firebase services
+    // import {} from "https://www.gstatic.com/firebasejs/${FIREBASE_VERSION}/firebase-analytics.js";
+    // import {} from "https://www.gstatic.com/firebasejs/${FIREBASE_VERSION}/firebase-app-check.js";
+    // import {} from "https://www.gstatic.com/firebasejs/${FIREBASE_VERSION}/firebase-auth.js";
+    // import {} from "https://www.gstatic.com/firebasejs/${FIREBASE_VERSION}/firebase-functions.js";
+    // import {} from "https://www.gstatic.com/firebasejs/${FIREBASE_VERSION}/firebase-firestore.js";
+    // import {} from "https://www.gstatic.com/firebasejs/${FIREBASE_VERSION}/firebase-storage.js";
+    // import {} from "https://www.gstatic.com/firebasejs/${FIREBASE_VERSION}/firebase-performance.js";
+    // import {} from "https://www.gstatic.com/firebasejs/${FIREBASE_VERSION}/firebase-remote-config.js";
+    // import {} from "https://www.gstatic.com/firebasejs/${FIREBASE_VERSION}/firebase-messaging.js";
+    // import {} from "https://www.gstatic.com/firebasejs/${FIREBASE_VERSION}/firebase-database.js";
+
+
+const appSetting = {
+    databaseURL: "https://scoutingapp-e16c4-default-rtdb.firebaseio.com/"
+}
+      
+// Initialize Firebase
+const app = initializeApp(appSetting);
+
+const database = getDatabase(app);
+const qualMatchSchedule = ref(database, "qualMatchSchedule");
+
+
 const tbody = document.getElementById("tbody");
 const tr = document.getElementsByClassName("tr");
-
 
 let timeRow = document.getElementById("time");
 let matchRow = document.getElementById("matchNumber");
