@@ -42,16 +42,17 @@ const saveButton = document.getElementById("saveButton");
 
 let rowCount = 1;
 
-function removeRow(){
-    console.log("remove row");
+//Code for removeRow
+removeRowButton.addEventListener("click", function() {
     if(tr.length > 1){
-        let desigRow = tr[tr.length - 1];
+        let desigRow = tr[tr.length - 2];
         console.log(desigRow.parentNode.removeChild(desigRow));
-        rowCount--;
+        //rowCount--; //Somehow commenting this out made it work, but row number kept going.
+        console.log("remove row"+(rowCount));
     }
-}
+});
 
-//Codes for saveButton:
+//Codes for saveButton: prints inputs to row below and add row
 saveButton.addEventListener("click", function() {
     console.log("save_"+(rowCount-1));
 
