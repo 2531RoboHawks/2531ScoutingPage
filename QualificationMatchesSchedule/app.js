@@ -48,7 +48,6 @@ let rowCount = 0;
 onValue(qualTime, function(snapshot) {
 let timeArray = Object.values(snapshot.val());
 console.log(timeArray[0]);
-
 });
 
 //Codes for saveButton: prints inputs to row below and add row
