@@ -63,20 +63,19 @@ table, th, td {
     text-align: center;
 }
 
-.linkInput {
-    /* background-color: gold; */
+/* .linkInput {
     border-color: gold;
     text-align: center;
     width: 80px;
-}
+} */
 
-.matchVideo {
+/* .matchVideo {
     background-color: gold;
     color: purple;
     font-weight: 550;
     flex-wrap: wrap;
     max-width: 95px;
-}
+} */
 
 .timeInput {
     /* background-color: gold; */

@@ -48,14 +48,17 @@ let rowCount = 0;
 onValue(qualTime, function(snapshot) {
 let timeArray = Object.values(snapshot.val());
 console.log(timeArray[0]);
+return timeArray;
 });
+
+// console.log(timeArray[0]);
 
 //Codes for saveButton: prints inputs to row below and add row
 saveButton.addEventListener("click", function() {
     console.log("save_"+(rowCount));
 
     saveTime();
-    saveLink();
+    // saveLink();
     saveMatchNum();
     saveRed1();
     saveRed2();
@@ -77,17 +80,17 @@ removeRowButton.addEventListener("click", function() {
     }
 });
 
-function saveTime() {
+function saveTime(timeArray) {
     let timeInput = document.getElementById("timeInput").value;
     push(qualTime, timeInput);
     document.getElementById("timeInput_"+(rowCount)).innerHTML = timeInput;
 }
 
-function saveLink() {
-    let linkInput = document.getElementById("linkInput").value;
-    push(qualLink, linkInput);
-    document.getElementById("linkInput_"+(rowCount)).innerHTML = linkInput;
-}
+// function saveLink() {
+//     let linkInput = document.getElementById("linkInput").value;
+//     push(qualLink, linkInput);
+//     document.getElementById("linkInput_"+(rowCount)).innerHTML = linkInput;
+// }
 
 function saveMatchNum() {
     let matchInput = document.getElementById("matchInput").value;
@@ -135,8 +138,6 @@ function addEmptyRow() {
     tbody.innerHTML += `
     <tr class="tr">
         <td class = "time" id="timeInput_${rowCount + 1}">
-        </td>
-        <td class = "matchVideo" id="linkInput_${rowCount + 1}">
         </td>
         <td class = "matchNumber" id="matchInput_${rowCount + 1}" >
         </td>
