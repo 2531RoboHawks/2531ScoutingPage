@@ -42,7 +42,10 @@ h1 {
 .qualContainer{
     display: flex;
     justify-content: center;
-    align-items: center;
+    max-width: 780px;
+    margin-left: auto;
+    margin-right: auto; /* Having both margins centers the table */
+    
 }
 
 .buttonContainer{
@@ -61,6 +64,8 @@ h1 {
 table, th, td {
     border:1px solid white;
     text-align: center;
+    justify-content: center;
+    max-width: 780px;
 }
 
 /* .linkInput {
@@ -81,14 +86,14 @@ table, th, td {
     /* background-color: gold; */
     border-color: gold;
     text-align: center;
-    width: 35px;
+    width: 50px;
 }
 
 .time {
     background-color: gold;
     color: purple;
     font-weight: 550;
-    max-width: 50px;
+    max-width: 60px;
 }
 
 .matchInput{
@@ -102,13 +107,13 @@ table, th, td {
     background-color: gold;
     color: purple;
     font-weight: 550;
-    max-width: 55px;
+    max-width: 65px;
 }
 
 .redInput{
     /* background-color: red; */
     border-color: red;
-    width: 45px;
+    width: 50px;
     text-align: center;
 }
 
@@ -116,13 +121,13 @@ table, th, td {
     background-color: red;
     color: white;
     font-weight: 550;
-    max-width: 60px;
+    max-width: 70px;
 }
 
 .blueInput{
     /* background-color: purple; */
     border-color: blue;
-    width: 45px;
+    width: 50px;
     text-align: center;
 }
 
@@ -130,5 +135,5 @@ table, th, td {
     background-color: blue;
     color: white;
     font-weight: 550;
-    max-width: 60px;
+    max-width: 70px;
 }
