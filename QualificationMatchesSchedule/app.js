@@ -50,6 +50,33 @@ let timeArray = Object.values(snapshot.val());
 console.log(timeArray[0]);
 });
 
+//Codes for saveButton: prints inputs to row below and add row
+saveButton.addEventListener("click", function(time) {
+    console.log("save_"+(rowCount));
+
+    saveTime();
+    saveLink();
+    saveMatchNum();
+    saveRed1();
+    saveRed2();
+    saveRed3();
+    saveBlue1();
+    saveBlue2();
+    saveBlue3();
+
+    addEmptyRow();
+});
+
+//Codes for removeRowButton: removes last row
+removeRowButton.addEventListener("click", function() {
+    if(tr.length > 1){
+        let desigRow = tr[tr.length - 2];
+        console.log(desigRow.parentNode.removeChild(desigRow));
+        //rowCount--; //Somehow leaving this out got it work, but row number kept going.
+        console.log("remove row"+(rowCount));
+    }
+});
+
 function saveTime() {
     let timeInput = document.getElementById("timeInput").value;
     push(qualTime, timeInput);
@@ -104,20 +131,7 @@ function saveBlue3() {
     document.getElementById("blue3_"+(rowCount)).innerHTML = blue3;
 }
 
-//Codes for saveButton: prints inputs to row below and add row
-saveButton.addEventListener("click", function(time) {
-    console.log("save_"+(rowCount));
-
-    saveTime();
-    saveLink();
-    saveMatchNum();
-    saveRed1();
-    saveRed2();
-    saveRed3();
-    saveBlue1();
-    saveBlue2();
-    saveBlue3();
-
+function addEmptyRow() {
     tbody.innerHTML += `
     <tr class="tr">
         <td class = "time" id="timeInput_${rowCount + 1}">
@@ -140,14 +154,4 @@ saveButton.addEventListener("click", function(time) {
         </td>
     </tr>`;  
     rowCount++;
-});
-
-//Codes for removeRowButton: removes last row
-removeRowButton.addEventListener("click", function() {
-    if(tr.length > 1){
-        let desigRow = tr[tr.length - 2];
-        console.log(desigRow.parentNode.removeChild(desigRow));
-        //rowCount--; //Somehow leaving this out got it work, but row number kept going.
-        console.log("remove row"+(rowCount));
-    }
-});
+}
