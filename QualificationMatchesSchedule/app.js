@@ -44,14 +44,15 @@ let rowCount = 0;
 //TODO: access folders from outside path, and insert link
 //TODO: make video link not shown in other columns when it's too long
 
-//Get data from database (supposedly)
+//Get data from database
 onValue(qualTime, function(snapshot) {
 let timeArray = Object.values(snapshot.val());
 console.log(timeArray[0]);
+
 });
 
 //Codes for saveButton: prints inputs to row below and add row
-saveButton.addEventListener("click", function(time) {
+saveButton.addEventListener("click", function() {
     console.log("save_"+(rowCount));
 
     saveTime();
