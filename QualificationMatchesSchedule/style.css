@@ -89,6 +89,7 @@ table, th, td {
     background-color: gold;
     color: purple;
     font-weight: 550;
+    max-width: 40px;
 }
 
 .matchInput{
@@ -102,6 +103,7 @@ table, th, td {
     background-color: gold;
     color: purple;
     font-weight: 550;
+    max-width: 45px;
 }
 
 .redInput{
@@ -115,6 +117,7 @@ table, th, td {
     background-color: red;
     color: white;
     font-weight: 550;
+    max-width: 50px;
 }
 
 .blueInput{
@@ -128,4 +131,5 @@ table, th, td {
     background-color: blue;
     color: white;
     font-weight: 550;
+    max-width: 50px;
 }
