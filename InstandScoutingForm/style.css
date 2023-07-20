@@ -23,7 +23,7 @@ label {
 
 .teamInfo {
     width: 30%;
-    min-width: 100px;
+    min-width: 300px;
     max-width: 500px;
     flex-wrap: wrap;
     margin-left: auto;
@@ -74,7 +74,7 @@ label {
 .matchResult {
     margin-top: 20px;
     width: 30%;
-    min-width: 100px;
+    min-width: 200px;
     max-width: 500px;
     flex-wrap: wrap;
     margin-left: auto;
