@@ -47,6 +47,7 @@ let rowCount = 0;
 
 //TODO: access folders from outside path, and insert link
 //TODO: make video link not shown in other columns when it's too long
+//TODO: if time >= localTime, then change color --see HTML JavaScript w3schools
 
 //Get data from database
 onValue(qualTime, function(snapshot) {
