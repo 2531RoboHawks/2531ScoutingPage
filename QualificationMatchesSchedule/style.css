@@ -19,6 +19,7 @@ nav {
     margin-bottom: 20px;
     justify-content: space-around;
     gap: 50px;
+    flex-wrap: wrap;
 }
 
 #pracSchedLink {
