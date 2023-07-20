@@ -8,30 +8,91 @@
     <title>Instand Scouting Form</title>
 </head>
 <body>
-    <h1 style="text-align: center;">Instand Scouting Form</h1>
+    <h1>Instand Scouting Form</h1>
     <div class="container">
-        <table class="info">
-            <th class="matchInfo">
-            <form action="">
-                <label>Match:</label>
-                    <input type="number" id="matchNum"value="0"><br><br>
-                <label>Team:</label>
-                    <select id="teamNum">
-                        <option value="null"></option>
-                        <option value="2531">2531</option>
-                    </select><br><br>
-                <label>Alliance:</label>
-                    <select id="alliance">
-                        <option value="null"></option>
-                        <option value="red">Red</option>
-                        <option value="Blue">Blue</option>
-                    </select>
-            </form>
-            </th>
+        <table class="teamInfo">
+            <tr>
+                <th>Team Info</th>
+            </tr>
+            <tr >
+                <td>
+                    <form action="">
+                        <label for="">Match:</label>
+                            <input type="number" class="matchNum" value="null"  name="" id=""><br>
+                        <label for="">Team:</label>
+                            <select class ="teamNum" name="" id="">
+                                <option value="null"></option>
+                                <option value="2531">2531</option>
+                            </select><br>
+                        <label for="">Alliance:</label>
+                            <select class ="alliance" name="" id="">
+                                <option value="null"></option>
+                                <option value="red">Red</option>
+                                <option value="Blue">Blue</option>
+                            </select>
+                    </form>
+                </td>
+            </tr>
+        </table>
+
+        <table class="auto">
+            <tr>
+                <th>Auto</th>
+            </tr>
+            <tr>
+                <td>
+                    <form action="">
+                        <label for="">High:</label>
+                            <input type="number" name="" id=""><label> cones</label>  <input type="number"><label> cubes</label><br>
+                        <label for="">Mid: </label>
+                            <input type="number" name="" id=""><label> cones</label>  <input type="number"><label> cubes</label><br>
+                        <label for="">Low: </label>
+                            <input type="number" name="" id=""><label> cones</label>  <input type="number"><label> cubes</label>
+                    </form><br>
+                    <form action="">
+                        <label for="">Charging Station: </label>
+                            <input type="checkbox" name="" id="">none
+                            <input type="checkbox" name="" id="">docked
+                            <input type="checkbox" name="" id="">engaged<br>
+                        <label for="">How many?</label>
+                            <input type="number">
+
+                    </form>
+                </td>
+            </tr>
+        </table>
+
+        <table class="teleop">
+            <tr>
+                <th>Teleop</th>
+            </tr>
+            <tr>
+                <td>
+                    <form action="">
+                        <label for="">High:</label>
+                            <input type="number" name="" id=""><label> cones</label>  <input type="number"><label> cubes</label><br>
+                        <label for="">Mid: </label>
+                            <input type="number" name="" id=""><label> cones</label>  <input type="number"><label> cubes</label><br>
+                        <label for="">Low: </label>
+                            <input type="number" name="" id=""><label> cones</label>  <input type="number"><label> cubes</label>
+                    </form><br>
+                    <form action="">
+                        <label for="">Charging Station: </label>
+                            <input type="checkbox" name="" id="">none
+                            <input type="checkbox" name="" id="">docked
+                            <input type="checkbox" name="" id="">engaged<br>
+                        <label for="">How many?</label>
+                            <input type="number">
+
+                    </form>
+                </td>
+            </tr>
         </table>
     </div>
+
     <div class="buttonContainer">
-        <button id="submitButton">Submit</button>
+        <!-- <button id="submitButton">Submit</button> -->
+        <input id="submitButton" type="submit">
     </div>
     
 
