@@ -10,7 +10,7 @@ table, th, td {
 
 th {
     color: black;
-    font-size: 160%;
+    font-size: 140%;
 }
 
 form {
@@ -18,13 +18,17 @@ form {
 }
 
 label {
-    font-size: 120%;
+    font-size: 110%;
+}
+
+input {
+    width: 30px;
 }
 
 .teamInfo {
     width: 30%;
     min-width: 300px;
-    max-width: 500px;
+    max-width: 400px;
     flex-wrap: wrap;
     margin-left: auto;
     margin-right: auto;
@@ -74,8 +78,8 @@ label {
 .matchResult {
     margin-top: 20px;
     width: 30%;
-    min-width: 200px;
-    max-width: 500px;
+    min-width: 250px;
+    max-width: 300px;
     flex-wrap: wrap;
     margin-left: auto;
     margin-right: auto;
