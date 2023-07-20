@@ -61,11 +61,11 @@ h1 {
     background-color: gold;
 }
 
-#matchesTable {
+#table, tr, td {
     border:1px solid white;
     text-align: center;
     justify-content: center;
-    width: 100%;
+    width: 80%;
     /* max-width: 780px; */
 }
 
