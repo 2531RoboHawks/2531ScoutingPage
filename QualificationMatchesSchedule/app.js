@@ -47,7 +47,7 @@ const saveButton = document.getElementById("saveButton");
 let rowCount = 0;
 
 //TODO: access folders from outside path, and insert link
-//TODO: make sure table rows and rowCount are saved and printed
+//TODO: make sure table rows and rowCount are saved and printed after user exit
 //TODO: if time >= localTime, then change color --see HTML JavaScript w3schools
 
 //Get data from database
