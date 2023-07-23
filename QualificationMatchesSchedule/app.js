@@ -30,14 +30,14 @@ const app = initializeApp(appSettings);
 const database = getDatabase(app);
 
 //Refering to each folders in database and store in variables
-const qualTime = ref(database, "qualTime");
-const qualMatch = ref(database, "qualMatch");
-const qualRed1 = ref(database, "qualRed1");
-const qualRed2 = ref(database, "qualRed2");
-const qualRed3 = ref(database, "qualRed3");
-const qualBlue1 = ref(database, "qualBlue1");
-const qualBlue2 = ref(database, "qualBlue2");
-const qualBlue3 = ref(database, "qualBlue3");
+const qualTime = ref(database, "qualSchedule/Time");
+const qualMatch = ref(database, "qualSchedule/Match");
+const qualRed1 = ref(database, "qualSchedule/Red1");
+const qualRed2 = ref(database, "qualSchedule/Red2");
+const qualRed3 = ref(database, "qualSchedule/Red3");
+const qualBlue1 = ref(database, "qualSchedule/Blue1");
+const qualBlue2 = ref(database, "qualSchedule/Blue2");
+const qualBlue3 = ref(database, "qualSchedule/Blue3");
 
 const tbody = document.getElementById("tbody");
 const tr = document.getElementsByClassName("tr");
