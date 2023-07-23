@@ -29,7 +29,6 @@ const app = initializeApp(appSettings);
 const database = getDatabase(app);
 
 const qualTime = ref(database, "qualTime");
-const qualLink = ref(database, "qualLink");
 const qualMatch = ref(database, "qualMatch");
 const qualRed1 = ref(database, "qualRed1");
 const qualRed2 = ref(database, "qualRed2");
@@ -55,8 +54,6 @@ let timeArray = Object.values(snapshot.val());
 console.log(timeArray[0]);
 return timeArray;
 });
-
-// console.log(timeArray[0]);
 
 //Codes for saveButton: prints inputs to row below and add row
 saveButton.addEventListener("click", function() {
@@ -90,12 +87,6 @@ function saveTime(timeArray) {
     push(qualTime, timeInput);
     document.getElementById("timeInput_"+(rowCount)).innerHTML = timeInput;
 }
-
-// function saveLink() {
-//     let linkInput = document.getElementById("linkInput").value;
-//     push(qualLink, linkInput);
-//     document.getElementById("linkInput_"+(rowCount)).innerHTML = linkInput;
-// }
 
 function saveMatchNum() {
     let matchInput = document.getElementById("matchInput").value;
