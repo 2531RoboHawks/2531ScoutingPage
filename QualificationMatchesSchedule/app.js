@@ -26,8 +26,10 @@ const appSettings = {
 // Initialize Firebase
 const app = initializeApp(appSettings);
 
+//Connects database to app
 const database = getDatabase(app);
 
+//Refering to each folders in database and store in variables
 const qualTime = ref(database, "qualTime");
 const qualMatch = ref(database, "qualMatch");
 const qualRed1 = ref(database, "qualRed1");
@@ -45,14 +47,13 @@ const saveButton = document.getElementById("saveButton");
 let rowCount = 0;
 
 //TODO: access folders from outside path, and insert link
-//TODO: make video link not shown in other columns when it's too long
+//TODO: make sure table rows and rowCount are saved and printed
 //TODO: if time >= localTime, then change color --see HTML JavaScript w3schools
 
 //Get data from database
 onValue(qualTime, function(snapshot) {
 let timeArray = Object.values(snapshot.val());
 console.log(timeArray[0]);
-return timeArray;
 });
 
 //Codes for saveButton: prints inputs to row below and add row
