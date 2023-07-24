@@ -88,7 +88,7 @@ saveButton.addEventListener("click", function() {
 onValue(qualTable, function(snapshot) {
 let rowArray = Object.values(snapshot.val());
 let rowIDs = Object.keys(snapshot.val());
-tbody.innerHTML = rowArray.join(""); //join("") replace "," to a "" between each values
+tbody.innerHTML = rowArray.join(""); //join("") replaces "," to "" between each values
 
 removeRowButton.addEventListener("click", function() {
 
