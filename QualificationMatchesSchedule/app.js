@@ -48,6 +48,7 @@ const saveButton = document.getElementById("saveButton");
 
 
 //TODO: push tbody to database and make values show in desig place
+//TODO: separate all firebase code in a different file
 //TODO: add a delete function that deletes the whole table
 //TODO: if time >= localTime, then change color --see HTML JavaScript w3schools
 
@@ -63,12 +64,15 @@ saveButton.addEventListener("click", function() {
     saveBlue1();
     saveBlue2();
     saveBlue3();
+    
+    addEmptyRow();
+    console.log(tbody.innerHTML);
 });
 
 //Codes for removeRowButton: removes last row
 removeRowButton.addEventListener("click", function() {
-    if(tr.length > 1){
-        let desigRow = tr[tr.length - 2];
+    if(tr.length > 0){
+        let desigRow = tr[tr.length - 1];
         console.log(desigRow.parentNode.removeChild(desigRow));
         console.log("remove row"+(tr.length - 1));
     }
@@ -76,93 +80,118 @@ removeRowButton.addEventListener("click", function() {
 
 addRowButton.addEventListener("click", function() {
     addEmptyRow();
-    console.log(tbody.innerHTML);
-})
+    // console.log(tbody.innerHTML);
+});
 
+//Get table
+onValue(qualTable, function(snapshot) {
+let rowArray = Object.values(snapshot.val());
+tbody.innerHTML = rowArray;
+});
+
+onValue(qualTime, function(snapshot) {
+    let timeArray = Object.values(snapshot.val());
+    let num = 0;
+    // while(num < tr.length) {
+    //     document.getElementById("timeInput_"+(num)).innerHTML = timeArray[num]; 
+    //     console.log(timeArray[num])
+    //     num++;
+    // }
+
+    // for(let i = 0; i < 5; i++) {
+    //     // document.getElementById("timeInput_"+(i)).innerHTML = timeArray[i];    
+    //     console.log(timeArray[i])
+    // }
+    
+    });
+
+// for(i = 0; i < tr.length; i++) {
+//     onValue(qualTime, function(snapshot) {
+//     let timeArray = Object.values(snapshot.val());
+//     document.getElementById("timeInput_"+(i)).innerHTML = timeArray[i]; 
+//     });
+
+//     onValue(qualMatch, function(snapshot) {
+//     let matchArray = Object.values(snapshot.val());
+//     document.getElementById("matchInput_"+(i)).innerHTML = matchArray[i];
+//     });
+
+//     onValue(qualRed1, function(snapshot) {
+//     let red1Array = Object.values(snapshot.val());
+//     document.getElementById("red1_"+(i)).innerHTML = red1Array[i];
+//     });
+    
+//     onValue(qualRed2, function(snapshot) {
+//     let red2Array = Object.values(snapshot.val());
+//     document.getElementById("red2_"+(i)).innerHTML = red2Array[i];
+//     });
+    
+//     onValue(qualRed3, function(snapshot) {
+//     let red3Array = Object.values(snapshot.val());
+//     document.getElementById("red3_"+(i)).innerHTML = red3Array[i];
+//     });
+
+//     onValue(qualBlue1, function(snapshot) {
+//     let blue1Array = Object.values(snapshot.val());
+//     document.getElementById("blue1_"+(i)).innerHTML = blue1Array[i];
+//     });
+
+//     onValue(qualBlue2, function(snapshot) {
+//     let blue2Array = Object.values(snapshot.val());
+//     document.getElementById("blue2_"+(i)).innerHTML = blue2Array[i];
+//     });
+    
+//     onValue(qualBlue3, function(snapshot) {
+//     let blue3Array = Object.values(snapshot.val());
+//     document.getElementById("blue3_"+(i)).innerHTML = blue3Array[i];
+//     });
+// }
+
+
+
+//Below are only for functions
 function saveTime() {
     let timeInput = document.getElementById("timeInput").value;
     push(qualTime, timeInput);
-
-    onValue(qualTime, function(snapshot) {
-    let timeArray = Object.values(snapshot.val());
-    document.getElementById("timeInput_"+(tr.length - 1)).innerHTML = timeArray[tr.length - 1];
-    });
 }
 
 function saveMatchNum() {
     let matchInput = document.getElementById("matchInput").value;
     push(qualMatch, matchInput);
-
-    onValue(qualMatch, function(snapshot) {
-    let matchArray = Object.values(snapshot.val());
-    document.getElementById("matchInput_"+(tr.length - 1)).innerHTML = matchArray[tr.length - 1];
-    });
 }
 
 function saveRed1() {
     let red1 = document.getElementById("red1").value;
     push(qualRed1, red1);
-
-    onValue(qualRed1, function(snapshot) {
-    let red1Array = Object.values(snapshot.val());
-    document.getElementById("red1_"+(tr.length - 1)).innerHTML = red1Array[tr.length - 1];
-    });
-    
 }
 
 function saveRed2() {
     let red2 = document.getElementById("red2").value;
     push(qualRed2, red2);
-
-    onValue(qualRed2, function(snapshot) {
-    let red2Array = Object.values(snapshot.val());
-    document.getElementById("red2_"+(tr.length - 1)).innerHTML = red2Array[tr.length - 1];
-    });
 }
 
 function saveRed3() {
     let red3 = document.getElementById("red3").value;
     push(qualRed3, red3);
-
-    onValue(qualRed3, function(snapshot) {
-    let red3Array = Object.values(snapshot.val());
-    document.getElementById("red3_"+(tr.length - 1)).innerHTML = red3Array[tr.length - 1];
-    });
 }
 
 function saveBlue1() {
     let blue1 = document.getElementById("blue1").value;
     push(qualBlue1, blue1);
-
-    onValue(qualBlue1, function(snapshot) {
-    let blue1Array = Object.values(snapshot.val());
-    document.getElementById("blue1_"+(tr.length - 1)).innerHTML = blue1Array[tr.length - 1];
-    });
 }
 
 function saveBlue2() {
     let blue2 = document.getElementById("blue2").value;
     push(qualBlue2, blue2);
-
-    onValue(qualBlue2, function(snapshot) {
-    let blue2Array = Object.values(snapshot.val());
-    document.getElementById("blue2_"+(tr.length - 1)).innerHTML = blue2Array[tr.length - 1];
-    });
 }
 
 function saveBlue3() {
     let blue3 = document.getElementById("blue3").value;
     push(qualBlue3, blue3);
-
-    onValue(qualBlue3, function(snapshot) {
-    let blue3Array = Object.values(snapshot.val());
-    document.getElementById("blue3_"+(tr.length - 1)).innerHTML = blue3Array[tr.length - 1];
-    });
 }
 
 function addEmptyRow() {
-    tbody.innerHTML += `
-    <tr class="tr">
+    let newRow = `<tr class="tr">
         <td class = "time" id="timeInput_${tr.length}">
         </td>
         <td class = "matchNumber" id="matchInput_${tr.length}" >
@@ -180,4 +209,6 @@ function addEmptyRow() {
         <td class = "blueAlliance" id="blue3_${tr.length}">
         </td>
     </tr>`;
+    tbody.innerHTML += newRow;
+    push(qualTable, newRow);
 }
