@@ -60,7 +60,9 @@ const blue2Input = document.getElementById("blue2");
 const blue3Input = document.getElementById("blue3");
 
 
-//TODO: make sure removeRow removes only one row
+//TODO: make sure removeRow removes only one row without having to refresh page
+//Substitution: add edit function so we wouldn't have to remove row
+
 //TODO: separate all firebase code in a different file
 //TODO: add a delete function that deletes the whole table
 //TODO: if time >= localTime, then change color --see HTML JavaScript w3schools
@@ -81,27 +83,20 @@ saveButton.addEventListener("click", function() {
     console.log("save_" + (tr.length - 1));
 });
 
+//removes last row
+removeRowButton.addEventListener("click", function() {
+    removeLastRow();
+});
+
 //resets the whole table
 resetButton.addEventListener("dblclick", function() {
     reset();
 });
 
-//Get table
+//Get saved data from database
 onValue(qualTable, function(snapshot) {
 let rowArray = Object.values(snapshot.val());
-let rowIDs = Object.keys(snapshot.val());
-tbody.innerHTML = rowArray.join(""); //join("") replaces "," to "" between each values
-
-removeRowButton.addEventListener("click", function() {
-
-    if(tr.length > 0){
-        let lastRowID = rowIDs[tr.length - 1]; //Gets the ID of last row
-        let lastRow = ref(database, `qualSchedule/Table/${lastRowID}`); //Reference to lastRow ID
-        console.log(lastRow);
-        remove(lastRow);
-        location.reload();
-    }
-});
+tbody.innerHTML = rowArray.join(""); //join("") replaces "," to "" between values in rowArray
 
     for(let i = 0; i < tr.length; i++) {
         onValue(qualTime, function(snapshot) {
@@ -232,6 +227,85 @@ function resetInputFields() {
     blue1Input.value = "";
     blue2Input.value = "";
     blue3Input.value = "";
+}
+
+function removeLastRow() {
+    onValue(qualTable, function(snapshot) {
+    let rowArray = Object.values(snapshot.val());
+    let rowIDs = Object.keys(snapshot.val());
+
+        if(rowArray.length > 0) {
+            //Removes last value from time on database
+            onValue(qualTime, function(snapshot) {
+            let timeIDs = Object.keys(snapshot.val());
+            let lastTimeID = timeIDs[rowArray.length - 1]; //Gets the timeID of last row
+            let lastTime = ref(database, `qualSchedule/Time/${lastTimeID}`); //Refers to time of last row
+            remove(lastTime);
+            });
+
+            //Removes last value from matches on database
+            onValue(qualMatch, function(snapshot) {
+            let matchIDs = Object.keys(snapshot.val());
+            let lastMatchID = matchIDs[rowArray.length - 1]; //Gets the matchID of last row
+            let lastMatch = ref(database, `qualSchedule/Match/${lastMatchID}`); //Refers to match of last row
+            remove(lastMatch);
+            });
+
+            //Removes last value from red1 on database
+            onValue(qualRed1, function(snapshot) {
+            let red1IDs = Object.keys(snapshot.val());
+            let lastRed1ID = red1IDs[rowArray.length - 1]; //Gets the red1ID of last row
+            let lastRed1 = ref(database, `qualSchedule/Red1/${lastRed1ID}`); //Refers to red1 of last row
+            remove(lastRed1);
+            });
+
+            //Removes last value from red2 on database
+            onValue(qualRed2, function(snapshot) {
+            let red2IDs = Object.keys(snapshot.val());
+            let lastRed2ID = red2IDs[rowArray.length - 1]; //Gets the red2ID of last row
+            let lastRed2 = ref(database, `qualSchedule/Red2/${lastRed2ID}`); //Refers to red2 of last row
+            remove(lastRed2);
+            });
+
+            //Removes last value from red3 on database
+            onValue(qualRed3, function(snapshot) {
+            let red3IDs = Object.keys(snapshot.val());
+            let lastRed3ID = red3IDs[rowArray.length - 1]; //Gets the red3ID of last row
+            let lastRed3 = ref(database, `qualSchedule/Red3/${lastRed3ID}`); //Refers to red3 of last row
+            remove(lastRed3);
+            });
+
+            //Removes last value from blue1 on database
+            onValue(qualBlue1, function(snapshot) {
+            let blue1IDs = Object.keys(snapshot.val());
+            let lastBlue1ID = blue1IDs[rowArray.length - 1]; //Gets the blue1ID of last row
+            let lastBlue1 = ref(database, `qualSchedule/Blue1/${lastBlue1ID}`); //Refers to blue1 of last row
+            remove(lastBlue1);
+            });
+
+            //Removes last value from blue2 on database
+            onValue(qualBlue2, function(snapshot) {
+            let blue2IDs = Object.keys(snapshot.val());
+            let lastBlue2ID = blue2IDs[rowArray.length - 1]; //Gets the blue2ID of last row
+            let lastBlue2 = ref(database, `qualSchedule/Blue2/${lastBlue2ID}`); //Refers to blue2 of last row
+            remove(lastBlue2);
+            });
+
+            //Removes last value from blue3 on database
+            onValue(qualBlue3, function(snapshot) {
+            let blue3IDs = Object.keys(snapshot.val());
+            let lastBlue3ID = blue3IDs[rowArray.length - 1]; //Gets the blue3ID of last row
+            let lastBlue3 = ref(database, `qualSchedule/Blue3/${lastBlue3ID}`); //Refers to blue3 of last row
+            remove(lastBlue3);
+            });
+
+            //Removes last value from table on database
+            let lastRowID = rowIDs[rowArray.length - 1]; //Gets the ID of last row
+            let lastRow = ref(database, `qualSchedule/Table/${lastRowID}`); //Refers to last row
+            remove(lastRow);
+        }
+        location.reload(); //This is a temporary solution for not deleting multiple rows at once.
+    });
 }
 
 function reset() {
