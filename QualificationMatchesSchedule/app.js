@@ -65,7 +65,7 @@ const blue3Input = document.getElementById("blue3");
 //TODO: add a delete function that deletes the whole table
 //TODO: if time >= localTime, then change color --see HTML JavaScript w3schools
 
-//Codes for saveButton: prints inputs to row below and add row
+//Push input to database and add row
 saveButton.addEventListener("click", function() {
     saveTime();
     saveMatchNum();
@@ -81,6 +81,7 @@ saveButton.addEventListener("click", function() {
     console.log("save_" + (tr.length - 1));
 });
 
+//resets the whole table
 resetButton.addEventListener("dblclick", function() {
     reset();
 });
