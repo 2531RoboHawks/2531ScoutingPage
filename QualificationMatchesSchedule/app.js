@@ -88,7 +88,7 @@ saveButton.addEventListener("click", function() {
 onValue(qualTable, function(snapshot) {
 let rowArray = Object.values(snapshot.val());
 let rowIDs = Object.keys(snapshot.val());
-tbody.innerHTML = rowArray;
+tbody.innerHTML = rowArray.join(""); //join("") replace "," to a "" between each values
 
 removeRowButton.addEventListener("click", function() {
 
@@ -198,7 +198,7 @@ function saveBlue3() {
 }
 
 function addEmptyRow() {
-    let newRow = `<tr class="tr" style="gap: none;">
+    let newRow = `<tr class="tr">
         <td class = "time" id="timeInput_${tr.length}">
         </td>
         <td class = "matchNumber" id="matchInput_${tr.length}" >
