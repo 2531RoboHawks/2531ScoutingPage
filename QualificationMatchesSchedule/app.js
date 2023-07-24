@@ -40,14 +40,27 @@ const qualBlue1 = ref(database, "qualSchedule/Blue1");
 const qualBlue2 = ref(database, "qualSchedule/Blue2");
 const qualBlue3 = ref(database, "qualSchedule/Blue3");
 
+//Table and row
 const tbody = document.getElementById("tbody");
 const tr = document.getElementsByClassName("tr");
+
+//Buttons
 const removeRowButton = document.getElementById("removeRowButton");
-const addRowButton = document.getElementById("addRowButton");
 const saveButton = document.getElementById("saveButton");
+const resetButton = document.getElementById("resetButton");
+
+//Input fields
+const timeInput = document.getElementById("timeInput");
+const matchInput = document.getElementById("matchInput");
+const red1Input = document.getElementById("red1");
+const red2Input = document.getElementById("red2");
+const red3Input = document.getElementById("red3");
+const blue1Input = document.getElementById("blue1");
+const blue2Input = document.getElementById("blue2");
+const blue3Input = document.getElementById("blue3");
 
 
-//TODO: push tbody to database and make values show in desig place
+//TODO: make sure removeRow removes only one row
 //TODO: separate all firebase code in a different file
 //TODO: add a delete function that deletes the whole table
 //TODO: if time >= localTime, then change color --see HTML JavaScript w3schools
@@ -64,25 +77,13 @@ saveButton.addEventListener("click", function() {
     saveBlue3();
     
     addEmptyRow();
-    // console.log(tbody.innerHTML);
-    console.log("save_" + (tr.length - 1))
+    resetInputFields();
+    console.log("save_" + (tr.length - 1));
 });
 
-//Codes for removeRowButton: removes last row
-// removeRowButton.addEventListener("click", function() {
-//     if(tr.length > 0){
-//         // let desigRow = tr[tr.length - 1];
-//         // let desigRow = ref(database, "qualSchedule/Time");
-//         // console.log(desigRow);
-//         // console.log(desigRow.parentNode.removeChild(desigRow));
-//         // console.log("remove row"+(tr.length - 1));
-//     }
-// });
-
-// addRowButton.addEventListener("click", function() {
-//     addEmptyRow();
-//     // console.log(tbody.innerHTML);
-// });
+resetButton.addEventListener("dblclick", function() {
+    reset();
+});
 
 //Get table
 onValue(qualTable, function(snapshot) {
@@ -97,6 +98,7 @@ removeRowButton.addEventListener("click", function() {
         let lastRow = ref(database, `qualSchedule/Table/${lastRowID}`); //Reference to lastRow ID
         console.log(lastRow);
         remove(lastRow);
+        location.reload();
     }
 });
 
@@ -218,4 +220,21 @@ function addEmptyRow() {
     </tr>`;
     tbody.innerHTML += newRow;
     push(qualTable, newRow);
+}
+
+function resetInputFields() {
+    timeInput.value = "";
+    matchInput.value = "";
+    red1Input.value = "";
+    red2Input.value = "";
+    red3Input.value = "";
+    blue1Input.value = "";
+    blue2Input.value = "";
+    blue3Input.value = "";
+}
+
+function reset() {
+    let table = ref(database, "qualSchedule");
+    remove(table);
+    location.reload();
 }
