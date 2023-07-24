@@ -50,12 +50,6 @@ let rowCount = 0;
 //TODO: make sure table rows and rowCount are saved and printed after user exit
 //TODO: if time >= localTime, then change color --see HTML JavaScript w3schools
 
-//Get data from database
-onValue(qualTime, function(snapshot) {
-let timeArray = Object.values(snapshot.val());
-console.log(timeArray[0]);
-});
-
 //Codes for saveButton: prints inputs to row below and add row
 saveButton.addEventListener("click", function() {
     console.log("save_"+(rowCount));
@@ -69,11 +63,9 @@ saveButton.addEventListener("click", function() {
     saveBlue1();
     saveBlue2();
     saveBlue3();
-
-    addEmptyRow();
 });
 
-//Codes for removeRowButton: removes last row
+//Codes for removeRowButton: removes last printed row
 removeRowButton.addEventListener("click", function() {
     if(tr.length > 1){
         let desigRow = tr[tr.length - 2];
@@ -83,52 +75,86 @@ removeRowButton.addEventListener("click", function() {
     }
 });
 
-function saveTime(timeArray) {
+function saveTime() {
     let timeInput = document.getElementById("timeInput").value;
     push(qualTime, timeInput);
-    document.getElementById("timeInput_"+(rowCount)).innerHTML = timeInput;
+
+    onValue(qualTime, function(snapshot) {
+    let timeArray = Object.values(snapshot.val());
+    console.log(timeArray[rowCount])
+    document.getElementById("timeInput_"+(rowCount)).innerHTML = timeArray[rowCount];
+    });
 }
 
 function saveMatchNum() {
     let matchInput = document.getElementById("matchInput").value;
     push(qualMatch, matchInput);
-    document.getElementById("matchInput_"+(rowCount)).innerHTML = matchInput;
+
+    onValue(qualMatch, function(snapshot) {
+    let matchArray = Object.values(snapshot.val());
+    document.getElementById("matchInput_"+(rowCount)).innerHTML = matchArray[rowCount];
+    });
 }
 
 function saveRed1() {
     let red1 = document.getElementById("red1").value;
     push(qualRed1, red1);
-    document.getElementById("red1_"+(rowCount)).innerHTML = red1;
+
+    onValue(qualRed1, function(snapshot) {
+    let red1Array = Object.values(snapshot.val());
+    document.getElementById("red1_"+(rowCount)).innerHTML = red1Array[rowCount];
+    });
+    
 }
 
 function saveRed2() {
     let red2 = document.getElementById("red2").value;
     push(qualRed2, red2);
-    document.getElementById("red2_"+(rowCount)).innerHTML = red2;
+
+    onValue(qualRed2, function(snapshot) {
+    let red2Array = Object.values(snapshot.val());
+    document.getElementById("red2_"+(rowCount)).innerHTML = red2Array[rowCount];
+    });
 }
 
 function saveRed3() {
     let red3 = document.getElementById("red3").value;
     push(qualRed3, red3);
-    document.getElementById("red3_"+(rowCount)).innerHTML = red3;
+
+    onValue(qualRed3, function(snapshot) {
+    let red3Array = Object.values(snapshot.val());
+    document.getElementById("red3_"+(rowCount)).innerHTML = red3Array[rowCount];
+    });
 }
 
 function saveBlue1() {
     let blue1 = document.getElementById("blue1").value;
     push(qualBlue1, blue1);
-    document.getElementById("blue1_"+(rowCount)).innerHTML = blue1;
+
+    onValue(qualBlue1, function(snapshot) {
+    let blue1Array = Object.values(snapshot.val());
+    document.getElementById("blue1_"+(rowCount)).innerHTML = blue1Array[rowCount];
+    });
 }
 
 function saveBlue2() {
     let blue2 = document.getElementById("blue2").value;
     push(qualBlue2, blue2);
-    document.getElementById("blue2_"+(rowCount)).innerHTML = blue2;
+
+    onValue(qualBlue2, function(snapshot) {
+    let blue2Array = Object.values(snapshot.val());
+    document.getElementById("blue2_"+(rowCount)).innerHTML = blue2Array[rowCount];
+    });
 }
 
 function saveBlue3() {
     let blue3 = document.getElementById("blue3").value;
     push(qualBlue3, blue3);
-    document.getElementById("blue3_"+(rowCount)).innerHTML = blue3;
+
+    onValue(qualBlue3, function(snapshot) {
+    let blue3Array = Object.values(snapshot.val());
+    document.getElementById("blue3_"+(rowCount)).innerHTML = blue3Array[rowCount];
+    });
 }
 
 function addEmptyRow() {
