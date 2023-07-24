@@ -198,7 +198,7 @@ function saveBlue3() {
 }
 
 function addEmptyRow() {
-    let newRow = `<tr class="tr">
+    let newRow = `<tr class="tr" style="gap: none;">
         <td class = "time" id="timeInput_${tr.length}">
         </td>
         <td class = "matchNumber" id="matchInput_${tr.length}" >
