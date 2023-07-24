@@ -59,6 +59,13 @@ h1 {
     margin-top: 10px;
 }
 
+#removeAllButton{
+    background-color: gold;
+    font-size: 50%;
+    margin-top: 20px;
+    display: flex;
+}
+
 #addRowButton {
     background-color: gold;
 }

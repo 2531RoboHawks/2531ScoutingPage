@@ -54,8 +54,6 @@ const saveButton = document.getElementById("saveButton");
 
 //Codes for saveButton: prints inputs to row below and add row
 saveButton.addEventListener("click", function() {
-    console.log("save_"+(tr.length - 1));
-
     saveTime();
     saveMatchNum();
     saveRed1();
@@ -66,86 +64,95 @@ saveButton.addEventListener("click", function() {
     saveBlue3();
     
     addEmptyRow();
-    console.log(tbody.innerHTML);
+    // console.log(tbody.innerHTML);
+    console.log("save_" + (tr.length - 1))
 });
 
 //Codes for removeRowButton: removes last row
-removeRowButton.addEventListener("click", function() {
-    if(tr.length > 0){
-        let desigRow = tr[tr.length - 1];
-        console.log(desigRow.parentNode.removeChild(desigRow));
-        console.log("remove row"+(tr.length - 1));
-    }
-});
+// removeRowButton.addEventListener("click", function() {
+//     if(tr.length > 0){
+//         // let desigRow = tr[tr.length - 1];
+//         // let desigRow = ref(database, "qualSchedule/Time");
+//         // console.log(desigRow);
+//         // console.log(desigRow.parentNode.removeChild(desigRow));
+//         // console.log("remove row"+(tr.length - 1));
+//     }
+// });
 
-addRowButton.addEventListener("click", function() {
-    addEmptyRow();
-    // console.log(tbody.innerHTML);
-});
+// addRowButton.addEventListener("click", function() {
+//     addEmptyRow();
+//     // console.log(tbody.innerHTML);
+// });
 
 //Get table
 onValue(qualTable, function(snapshot) {
 let rowArray = Object.values(snapshot.val());
+let rowIDs = Object.keys(snapshot.val());
 tbody.innerHTML = rowArray;
+
+removeRowButton.addEventListener("click", function() {
+
+    if(tr.length > 0){
+        let lastRowID = rowIDs[tr.length - 1]; //Gets the ID of last row
+        let lastRow = ref(database, `qualSchedule/Table/${lastRowID}`); //Reference to lastRow ID
+        console.log(lastRow);
+        remove(lastRow);
+    }
 });
 
-onValue(qualTime, function(snapshot) {
-    let timeArray = Object.values(snapshot.val());
-    let num = 0;
-    // while(num < tr.length) {
-    //     document.getElementById("timeInput_"+(num)).innerHTML = timeArray[num]; 
-    //     console.log(timeArray[num])
-    //     num++;
-    // }
-
-    // for(let i = 0; i < 5; i++) {
-    //     // document.getElementById("timeInput_"+(i)).innerHTML = timeArray[i];    
-    //     console.log(timeArray[i])
-    // }
+    for(let i = 0; i < tr.length; i++) {
+        onValue(qualTime, function(snapshot) {
+        let timeArray = Object.values(snapshot.val());
+        document.getElementById("timeInput_"+(i)).innerHTML = timeArray[i];
+        console.log(timeArray[i]); 
+        });
     
-    });
-
-// for(i = 0; i < tr.length; i++) {
-//     onValue(qualTime, function(snapshot) {
-//     let timeArray = Object.values(snapshot.val());
-//     document.getElementById("timeInput_"+(i)).innerHTML = timeArray[i]; 
-//     });
-
-//     onValue(qualMatch, function(snapshot) {
-//     let matchArray = Object.values(snapshot.val());
-//     document.getElementById("matchInput_"+(i)).innerHTML = matchArray[i];
-//     });
-
-//     onValue(qualRed1, function(snapshot) {
-//     let red1Array = Object.values(snapshot.val());
-//     document.getElementById("red1_"+(i)).innerHTML = red1Array[i];
-//     });
+        onValue(qualMatch, function(snapshot) {
+        let matchArray = Object.values(snapshot.val());
+        document.getElementById("matchInput_"+(i)).innerHTML = matchArray[i];
+        console.log(matchArray[i]);
+        });
     
-//     onValue(qualRed2, function(snapshot) {
-//     let red2Array = Object.values(snapshot.val());
-//     document.getElementById("red2_"+(i)).innerHTML = red2Array[i];
-//     });
+        onValue(qualRed1, function(snapshot) {
+        let red1Array = Object.values(snapshot.val());
+        document.getElementById("red1_"+(i)).innerHTML = red1Array[i];
+        console.log(red1Array[i]);
+        });
+        
+        onValue(qualRed2, function(snapshot) {
+        let red2Array = Object.values(snapshot.val());
+        document.getElementById("red2_"+(i)).innerHTML = red2Array[i];
+        console.log(red2Array[i]);
+        });
+        
+        onValue(qualRed3, function(snapshot) {
+        let red3Array = Object.values(snapshot.val());
+        document.getElementById("red3_"+(i)).innerHTML = red3Array[i];
+        console.log(red3Array[i]);
+        });
     
-//     onValue(qualRed3, function(snapshot) {
-//     let red3Array = Object.values(snapshot.val());
-//     document.getElementById("red3_"+(i)).innerHTML = red3Array[i];
-//     });
-
-//     onValue(qualBlue1, function(snapshot) {
-//     let blue1Array = Object.values(snapshot.val());
-//     document.getElementById("blue1_"+(i)).innerHTML = blue1Array[i];
-//     });
-
-//     onValue(qualBlue2, function(snapshot) {
-//     let blue2Array = Object.values(snapshot.val());
-//     document.getElementById("blue2_"+(i)).innerHTML = blue2Array[i];
-//     });
+        onValue(qualBlue1, function(snapshot) {
+        let blue1Array = Object.values(snapshot.val());
+        document.getElementById("blue1_"+(i)).innerHTML = blue1Array[i];
+        console.log(blue1Array[i]);
+        });
     
-//     onValue(qualBlue3, function(snapshot) {
-//     let blue3Array = Object.values(snapshot.val());
-//     document.getElementById("blue3_"+(i)).innerHTML = blue3Array[i];
-//     });
-// }
+        onValue(qualBlue2, function(snapshot) {
+        let blue2Array = Object.values(snapshot.val());
+        document.getElementById("blue2_"+(i)).innerHTML = blue2Array[i];
+        console.log(blue2Array[i]);
+        });
+        
+        onValue(qualBlue3, function(snapshot) {
+        let blue3Array = Object.values(snapshot.val());
+        document.getElementById("blue3_"+(i)).innerHTML = blue3Array[i];
+        console.log(blue3Array[i]);
+        });
+    }
+});
+
+
+
 
 
 
