@@ -61,7 +61,7 @@ const blue3Input = document.getElementById("blue3");
 
 
 //TODO: make sure removeRow removes only one row without having to refresh page
-//Substitution: add edit function so we wouldn't have to remove row
+//Substitution: add edit function designated to each row so we wouldn't have to remove row
 
 //TODO: separate all firebase code in a different file
 //TODO: add a delete function that deletes the whole table
@@ -69,6 +69,7 @@ const blue3Input = document.getElementById("blue3");
 
 //Push input to database and add row
 saveButton.addEventListener("click", function() {
+    //These will push user inputs to database
     saveTime();
     saveMatchNum();
     saveRed1();
@@ -78,12 +79,12 @@ saveButton.addEventListener("click", function() {
     saveBlue2();
     saveBlue3();
     
-    addEmptyRow();
-    resetInputFields();
+    addEmptyRow(); //Adds empty row for new inputs that are programmed to display immediately
+    resetInputFields(); //Empty input fields after inputs are saved.
     console.log("save_" + (tr.length - 1));
 });
 
-//removes last row
+//removes last row (supposedly)
 removeRowButton.addEventListener("click", function() {
     removeLastRow();
 });
@@ -235,6 +236,11 @@ function removeLastRow() {
     let rowIDs = Object.keys(snapshot.val());
 
         if(rowArray.length > 0) {
+            //Removes last value from table on database
+            let lastRowID = rowIDs[rowArray.length - 1]; //Gets the ID of last row
+            let lastRow = ref(database, `qualSchedule/Table/${lastRowID}`); //Refers to last row
+            remove(lastRow);
+
             //Removes last value from time on database
             onValue(qualTime, function(snapshot) {
             let timeIDs = Object.keys(snapshot.val());
@@ -298,11 +304,6 @@ function removeLastRow() {
             let lastBlue3 = ref(database, `qualSchedule/Blue3/${lastBlue3ID}`); //Refers to blue3 of last row
             remove(lastBlue3);
             });
-
-            //Removes last value from table on database
-            let lastRowID = rowIDs[rowArray.length - 1]; //Gets the ID of last row
-            let lastRow = ref(database, `qualSchedule/Table/${lastRowID}`); //Refers to last row
-            remove(lastRow);
         }
         location.reload(); //This is a temporary solution for not deleting multiple rows at once.
     });
