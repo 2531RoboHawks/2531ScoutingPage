@@ -152,7 +152,12 @@ tbody.innerHTML = rowArray.join(""); //join("") replaces "," to "" between value
 });
 
 
-
+onValue(qualTable, function(snapshot) {
+    let rowIDs = Object.keys(snapshot.val());
+    let lastRowID = rowIDs[rowIDs.length - 1]; //Gets the ID of last row
+    let lastRow = ref(database, `qualSchedule/Table/${lastRowID}`); //Refers to last row
+    console.log(lastRow);
+});
 
 
 
@@ -231,24 +236,30 @@ function resetInputFields() {
     blue3Input.value = "";
 }
 
+// Something in the remove lastRow and lastTime that made it to delete everything
+
 function removeLastRow() {
+    
     onValue(qualTable, function(snapshot) {
-    let rowArray = Object.values(snapshot.val());
-    let rowIDs = Object.keys(snapshot.val());
+        let rowIDs = Object.keys(snapshot.val());
+        let lastRowID = rowIDs[rowIDs.length - 1]; //Gets the ID of last row
+        let lastRow = ref(database, `qualSchedule/Table/${lastRowID}`); //Refers to last row
 
-        if(rowArray.length > 0) {
-            //Removes last value from table on database
-            let lastRowID = rowIDs[rowArray.length - 1]; //Gets the ID of last row
-            let lastRow = ref(database, `qualSchedule/Table/${lastRowID}`); //Refers to last row
-            remove(lastRow);
+            if(rowIDs.length > 0) {
+                remove(lastRow); //Removes last value from table on database
+            }
+    });
+            
+    onValue(qualTime, function(snapshot) {
+        let timeIDs = Object.keys(snapshot.val());
+        let lastTimeID = timeIDs[timeIDs.length - 1]; //Gets the timeID of last row
+        let lastTime = ref(database, `qualSchedule/Time/${lastTimeID}`); //Refers to time of last row
 
-            //Removes last value from time on database
-            onValue(qualTime, function(snapshot) {
-            let timeIDs = Object.keys(snapshot.val());
-            let lastTimeID = timeIDs[rowArray.length - 1]; //Gets the timeID of last row
-            let lastTime = ref(database, `qualSchedule/Time/${lastTimeID}`); //Refers to time of last row
-            remove(lastTime);
-            });
+            if(timeIDs.length > 0) {
+                remove(lastTime); //Removes last value from time on database
+            }
+            
+    });
 
             //Removes last value from matches on database
             onValue(qualMatch, function(snapshot) {
@@ -305,9 +316,7 @@ function removeLastRow() {
             let lastBlue3 = ref(database, `qualSchedule/Blue3/${lastBlue3ID}`); //Refers to blue3 of last row
             remove(lastBlue3);
             });
-        }
-        location.reload(); //This is a temporary solution for not deleting multiple rows at once.
-    });
+            location.reload(); //This is a temporary solution for not deleting multiple rows at once.
 }
 
 function reset() {
