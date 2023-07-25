@@ -66,6 +66,7 @@ const blue3Input = document.getElementById("blue3");
 //TODO: separate all firebase code in a different file
 //TODO: add a delete function that deletes the whole table
 //TODO: if time >= localTime, then change color --see HTML JavaScript w3schools
+//TODO: (optional) add hover effects --see firebase mobile app tutorial
 
 //Push input to database and add row
 saveButton.addEventListener("click", function() {
