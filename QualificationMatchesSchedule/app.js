@@ -321,5 +321,6 @@ function removeLastRow() {
 }
 
 function reset() {
-    remove(qualRow, qualTime, qualMatch, qualRed1, qualRed2, qualRed3, qualBlue1, qualBlue2, qualBlue3);
+    let table = ref(database, "qualSchedule");
+    remove(table);
 }
