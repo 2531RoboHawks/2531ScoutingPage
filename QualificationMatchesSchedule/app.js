@@ -238,14 +238,14 @@ function resetInputFields() {
 
 function removeLastRow() {
     
-    // onValue(qualRow, function(snapshot) {
-    //     let rowIDs = Object.keys(snapshot.val());
-    //     let lastRowID = rowIDs[rowIDs.length - 1]; //Gets the ID of last row
-    //     let lastRow = ref(database, `qualSchedule/Table/${lastRowID}`); //Refers to last row
-    //         if(rowIDs.length > 0) {
-    //             remove(lastRow); //Removes last value from table on database
-    //         }
-    // });
+    onValue(qualRow, function(snapshot) {
+        let rowIDs = Object.keys(snapshot.val());
+        let lastRowID = rowIDs[rowIDs.length - 1]; //Gets the ID of last row
+        let lastRow = ref(database, `qualSchedule/Table/${lastRowID}`); //Refers to last row
+            if(rowIDs.length > 0) {
+                remove(lastRow); //Removes last value from table on database
+            }
+    });
             
     onValue(qualTime, function(snapshot) {
         let timeIDs = Object.keys(snapshot.val());
