@@ -30,6 +30,7 @@ const app = initializeApp(appSettings);
 const database = getDatabase(app);
 
 //Refering to each folders in database and store in variables
+const table = ref(database, "qualSchedule");
 const qualRow = ref(database, "qualSchedule/Row")
 const qualTime = ref(database, "qualSchedule/Time");
 const qualMatch = ref(database, "qualSchedule/Match");
@@ -321,6 +322,5 @@ function removeLastRow() {
 }
 
 function reset() {
-    let table = ref(database, "qualSchedule");
     remove(table);
 }
