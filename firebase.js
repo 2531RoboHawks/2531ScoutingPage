@@ -1,6 +1,6 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-app.js";
-//initializeApp(): *one-time-use*, to initialize our app with app settings *app settings are set on firebase* (used in line 36)
+//initializeApp(): *one-time-use*, to initialize our app with app settings *app settings are set on firebase*
 
 import { getDatabase, ref, push, onValue, update, remove, set, child, get} from "https://www.gstatic.com/firebasejs/10.0.0/firebase-database.js";
     /* 
@@ -10,7 +10,7 @@ import { getDatabase, ref, push, onValue, update, remove, set, child, get} from 
         Import only the functions that you need.
     */
 
-//getDatabase(): *one-time-use*, to connect our app to the database (used in line 39)
+//getDatabase(): *one-time-use*, to connect our app to the database
 //ref(): to refer to the targeted folder in database
 //push(): to save values to database
 //onValue(): to get values from database
@@ -41,6 +41,7 @@ const app = initializeApp(appSettings);
 const database = getDatabase(app);
 
 // Database for Qualification Matches Schedule
+export const qualTable = ref(database, "qualSchedule")
 export const qualRow = ref(database, "qualSchedule/Row");
 export const qualTime = ref(database, "qualSchedule/Time");
 export const qualMatch = ref(database, "qualSchedule/Match");
