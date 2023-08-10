@@ -26,7 +26,7 @@ import {
     getAuth, 
     connectAuthEmulator, 
     signInWithEmailAndPassword, 
-    createUserWithEmailAndPassword, //We will not be using this function because 
+    createUserWithEmailAndPassword, //We will not be using this function
     onAuthStateChanged,
     signOut
 } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-auth.js";
@@ -39,8 +39,10 @@ const appSettings = {
 const app = initializeApp(appSettings);
 
 //Connects database to app
-const database = getDatabase(app);
-const auth = getAuth(app);
+const database = getDatabase(app); //Realtime-database
+const auth = getAuth(app); //Authentication
+
+//Users and authentication
 
 // Database for Qualification Matches Schedule
 export const qualTable = ref(database, "qualSchedule")
