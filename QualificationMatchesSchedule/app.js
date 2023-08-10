@@ -51,8 +51,8 @@ saveButton.addEventListener("click", function() {
 
 //removes last row (supposedly)
 removeRowButton.addEventListener("click", function() {
-    removeLastRow();
-    updateTable();
+    // removeLastRow();
+    // updateTable();
 });
 
 //resets the whole table
