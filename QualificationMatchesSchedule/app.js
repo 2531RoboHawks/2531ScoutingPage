@@ -1,31 +1,7 @@
 import {ref, push, onValue, update, remove } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-database.js";
-//ref(): to refer to the targeted database
-//push(): to save values to database
-//onValue(): to get values from database
-//remove(): to remove values from database
 import * as robohawks from "../firebase.js";
+//(import *) lets you import everything from that file
 
-// const appSettings = {
-//     databaseURL: "https://scoutingapp-e16c4-default-rtdb.firebaseio.com/"
-// }
-      
-// Initialize Firebase
-// const app = initializeApp(appSettings);
-
-//Connects database to app
-// const database = getDatabase(app);
-
-//Refering to each folders in database and store in variables
-// const table = ref(robohawks.database, "qualSchedule");
-// const qualRow = ref(robohawks.database, "qualSchedule/Row")
-// const qualTime = ref(robohawks.database, "qualSchedule/Time");
-// const qualMatch = ref(robohawks.database, "qualSchedule/Match");
-// const qualRed1 = ref(robohawks.database, "qualSchedule/Red1");
-// const qualRed2 = ref(robohawks.database, "qualSchedule/Red2");
-// const qualRed3 = ref(robohawks.database, "qualSchedule/Red3");
-// const qualBlue1 = ref(robohawks.database, "qualSchedule/Blue1");
-// const qualBlue2 = ref(robohawks.database, "qualSchedule/Blue2");
-// const qualBlue3 = ref(robohawks.database, "qualSchedule/Blue3");
 
 //Table and row
 const tbody = document.getElementById("tbody");
@@ -50,7 +26,6 @@ const blue3Input = document.getElementById("blue3");
 //TODO: make sure removeRow removes only one row without having to refresh page
 //TODO: add edit function designated to each row so we wouldn't have to remove row
 
-//TODO: separate all firebase code in a different file
 //TODO: if time >= localTime, then change color --see HTML JavaScript w3schools
 //TODO: (optional) add hover effects --see firebase mobile app tutorial
 
