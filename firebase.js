@@ -18,7 +18,6 @@ import { getDatabase, ref, push, onValue, update, remove } from "https://www.gst
     // import {} from "https://www.gstatic.com/firebasejs/${FIREBASE_VERSION}/firebase-messaging.js";
     // import {} from "https://www.gstatic.com/firebasejs/${FIREBASE_VERSION}/firebase-database.js";
 
-
 const appSettings = {
     databaseURL: "https://scoutingapp-e16c4-default-rtdb.firebaseio.com/"
 }
@@ -30,12 +29,13 @@ const app = initializeApp(appSettings);
 const database = getDatabase(app);
 
 // Database for Qualification Matches Schedule
-const qualTable = ref(database, "qualSchedule/Table")
-const qualTime = ref(database, "qualSchedule/Time");
-const qualMatch = ref(database, "qualSchedule/Match");
-const qualRed1 = ref(database, "qualSchedule/Red1");
-const qualRed2 = ref(database, "qualSchedule/Red2");
-const qualRed3 = ref(database, "qualSchedule/Red3");
-const qualBlue1 = ref(database, "qualSchedule/Blue1");
-const qualBlue2 = ref(database, "qualSchedule/Blue2");
-const qualBlue3 = ref(database, "qualSchedule/Blue3");
+export const qualRow = ref(database, "qualSchedule/Row");
+export const qualTime = ref(database, "qualSchedule/Time");
+export const qualMatch = ref(database, "qualSchedule/Match");
+export const qualRed1 = ref(database, "qualSchedule/Red1");
+export const qualRed2 = ref(database, "qualSchedule/Red2");
+export const qualRed3 = ref(database, "qualSchedule/Red3");
+export const qualBlue1 = ref(database, "qualSchedule/Blue1");
+export const qualBlue2 = ref(database, "qualSchedule/Blue2");
+export const qualBlue3 = ref(database, "qualSchedule/Blue3");
+
