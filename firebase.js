@@ -2,22 +2,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-app.js";
 //initializeApp(): *one-time-use*, to initialize our app with app settings *app settings are set on firebase*
 
-import { getDatabase, ref, push, onValue, update, remove, set, child, get} from "https://www.gstatic.com/firebasejs/10.0.0/firebase-database.js";
-    /* 
-        All functions listed after ref() are not used in this js file.
-        They're just there for future coders to reference.
-        You can look up what each one does in firebase.
-        Import only the functions that you need.
-    */
-
-//getDatabase(): *one-time-use*, to connect our app to the database
-//ref(): to refer to the targeted folder in database
-//push(): to save values to database
-//onValue(): to get values from database
-//update(); updating an existing file/value on database
-//remove(): to remove values from database
-    
-
 // Follow this pattern to import other Firebase services
     // import {} from "https://www.gstatic.com/firebasejs/${FIREBASE_VERSION}/firebase-analytics.js";
     // import {} from "https://www.gstatic.com/firebasejs/${FIREBASE_VERSION}/firebase-app-check.js";
@@ -30,6 +14,23 @@ import { getDatabase, ref, push, onValue, update, remove, set, child, get} from 
     // import {} from "https://www.gstatic.com/firebasejs/${FIREBASE_VERSION}/firebase-messaging.js";
     // import {} from "https://www.gstatic.com/firebasejs/${FIREBASE_VERSION}/firebase-database.js";
 
+import { getDatabase, ref, push, onValue, update, remove, set, child, get} from "https://www.gstatic.com/firebasejs/10.0.0/firebase-database.js";
+    /* 
+        All functions listed after ref() are not used in this js file.
+        They're just there for future coders to reference.
+        You can find out what each one does in firebase documentation.
+        Import only the functions that you need.
+    */
+
+import { 
+    getAuth, 
+    connectAuthEmulator, 
+    signInWithEmailAndPassword, 
+    createUserWithEmailAndPassword, //We will not be using this function because 
+    onAuthStateChanged,
+    signOut
+} from "https://www.gstatic.com/firebasejs/10.0.0/firebase-auth.js";
+
 const appSettings = {
     databaseURL: "https://scoutingapp-e16c4-default-rtdb.firebaseio.com/"
 }
@@ -39,6 +40,7 @@ const app = initializeApp(appSettings);
 
 //Connects database to app
 const database = getDatabase(app);
+const auth = getAuth(app);
 
 // Database for Qualification Matches Schedule
 export const qualTable = ref(database, "qualSchedule")

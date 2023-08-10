@@ -1,12 +1,6 @@
-import {
-    ref, 
-    push, 
-    onValue, 
-    update, 
-    remove 
-} from "https://www.gstatic.com/firebasejs/10.0.0/firebase-database.js";
+import { ref, push, onValue, update, remove } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-database.js";
 
-import * as userInputDatabase from "../firebase.js";
+import * as teamDatabase from "../firebase.js";
 //(import *) lets you import everything from that file
 
 //Table and row
@@ -72,54 +66,54 @@ resetButton.addEventListener("dblclick", function() {
 
 //Get saved data from database
 function updateTable() {
-    onValue(userInputDatabase.qualRow, function(snapshot) {
+    onValue(teamDatabase.qualRow, function(snapshot) {
     let rowArray = Object.values(snapshot.val());
     tbody.innerHTML = rowArray.join(""); //join("") replaces "," to "" between values in rowArray
 
         for(let i = 0; i < tr.length; i++) {
-            onValue(userInputDatabase.qualTime, function(snapshot) {
+            onValue(teamDatabase.qualTime, function(snapshot) {
             let timeArray = Object.values(snapshot.val());
             document.getElementById("timeInput_"+(i)).innerHTML = timeArray[i];
             console.log(timeArray[i]); 
             });
         
-            onValue(userInputDatabase.qualMatch, function(snapshot) {
+            onValue(teamDatabase.qualMatch, function(snapshot) {
             let matchArray = Object.values(snapshot.val());
             document.getElementById("matchInput_"+(i)).innerHTML = matchArray[i];
             console.log(matchArray[i]);
             });
         
-            onValue(userInputDatabase.qualRed1, function(snapshot) {
+            onValue(teamDatabase.qualRed1, function(snapshot) {
             let red1Array = Object.values(snapshot.val());
             document.getElementById("red1_"+(i)).innerHTML = red1Array[i];
             console.log(red1Array[i]);
             });
             
-            onValue(userInputDatabase.qualRed2, function(snapshot) {
+            onValue(teamDatabase.qualRed2, function(snapshot) {
             let red2Array = Object.values(snapshot.val());
             document.getElementById("red2_"+(i)).innerHTML = red2Array[i];
             console.log(red2Array[i]);
             });
             
-            onValue(userInputDatabase.qualRed3, function(snapshot) {
+            onValue(teamDatabase.qualRed3, function(snapshot) {
             let red3Array = Object.values(snapshot.val());
             document.getElementById("red3_"+(i)).innerHTML = red3Array[i];
             console.log(red3Array[i]);
             });
         
-            onValue(userInputDatabase.qualBlue1, function(snapshot) {
+            onValue(teamDatabase.qualBlue1, function(snapshot) {
             let blue1Array = Object.values(snapshot.val());
             document.getElementById("blue1_"+(i)).innerHTML = blue1Array[i];
             console.log(blue1Array[i]);
             });
         
-            onValue(userInputDatabase.qualBlue2, function(snapshot) {
+            onValue(teamDatabase.qualBlue2, function(snapshot) {
             let blue2Array = Object.values(snapshot.val());
             document.getElementById("blue2_"+(i)).innerHTML = blue2Array[i];
             console.log(blue2Array[i]);
             });
             
-            onValue(userInputDatabase.qualBlue3, function(snapshot) {
+            onValue(teamDatabase.qualBlue3, function(snapshot) {
             let blue3Array = Object.values(snapshot.val());
             document.getElementById("blue3_"+(i)).innerHTML = blue3Array[i];
             console.log(blue3Array[i]);
@@ -130,42 +124,42 @@ function updateTable() {
 
 function saveTime() {
     let timeInput = document.getElementById("timeInput").value;
-    push(userInputDatabase.qualTime, timeInput);
+    push(teamDatabase.qualTime, timeInput);
 }
 
 function saveMatchNum() {
     let matchInput = document.getElementById("matchInput").value;
-    push(userInputDatabase.qualMatch, matchInput);
+    push(teamDatabase.qualMatch, matchInput);
 }
 
 function saveRed1() {
     let red1 = document.getElementById("red1").value;
-    push(userInputDatabase.qualRed1, red1);
+    push(teamDatabase.qualRed1, red1);
 }
 
 function saveRed2() {
     let red2 = document.getElementById("red2").value;
-    push(userInputDatabase.qualRed2, red2);
+    push(teamDatabase.qualRed2, red2);
 }
 
 function saveRed3() {
     let red3 = document.getElementById("red3").value;
-    push(userInputDatabase.qualRed3, red3);
+    push(teamDatabase.qualRed3, red3);
 }
 
 function saveBlue1() {
     let blue1 = document.getElementById("blue1").value;
-    push(userInputDatabase.qualBlue1, blue1);
+    push(teamDatabase.qualBlue1, blue1);
 }
 
 function saveBlue2() {
     let blue2 = document.getElementById("blue2").value;
-    push(userInputDatabase.qualBlue2, blue2);
+    push(teamDatabase.qualBlue2, blue2);
 }
 
 function saveBlue3() {
     let blue3 = document.getElementById("blue3").value;
-    push(userInputDatabase.qualBlue3, blue3);
+    push(teamDatabase.qualBlue3, blue3);
 }
 
 function addEmptyRow() {
@@ -188,7 +182,7 @@ function addEmptyRow() {
         </td>
     </tr>`;
     tbody.innerHTML += newRow;
-    push(userInputDatabase.qualRow, newRow);
+    push(teamDatabase.qualRow, newRow);
 }
 
 function resetInputFields() {
@@ -206,7 +200,7 @@ function resetInputFields() {
 
 function removeLastRow() {
     
-    onValue(userInputDatabase.qualRow, function(snapshot) {
+    onValue(teamDatabase.qualRow, function(snapshot) {
         let rowIDs = Object.keys(snapshot.val());
         let lastRowID = rowIDs[rowIDs.length - 1]; //Gets the ID of last row
         let lastRow = ref(database, `qualSchedule/Row/${lastRowID}`); //Refers to last row
@@ -215,7 +209,7 @@ function removeLastRow() {
             }
     });
             
-    onValue(userInputDatabase.qualTime, function(snapshot) {
+    onValue(teamDatabase.qualTime, function(snapshot) {
         let timeIDs = Object.keys(snapshot.val());
         let lastTimeID = timeIDs[timeIDs.length - 1]; //Gets the timeID of last row
         let lastTime = ref(database, `qualSchedule/Time/${lastTimeID}`); //Refers to time of last row
@@ -224,7 +218,7 @@ function removeLastRow() {
             }
     });
             
-    onValue(userInputDatabase.qualMatch, function(snapshot) {
+    onValue(teamDatabase.qualMatch, function(snapshot) {
         let matchIDs = Object.keys(snapshot.val());
         let lastMatchID = matchIDs[matchIDs.length - 1]; //Gets the matchID of last row
         let lastMatch = ref(database, `qualSchedule/Match/${lastMatchID}`); //Refers to match of last row
@@ -233,7 +227,7 @@ function removeLastRow() {
             }
     });
 
-    onValue(userInputDatabase.qualRed1, function(snapshot) {
+    onValue(teamDatabase.qualRed1, function(snapshot) {
         let red1IDs = Object.keys(snapshot.val());
         let lastRed1ID = red1IDs[red1IDs.length - 1]; //Gets the red1ID of last row
         let lastRed1 = ref(database, `qualSchedule/Red1/${lastRed1ID}`); //Refers to red1 of last row
@@ -242,7 +236,7 @@ function removeLastRow() {
             }
     });
 
-    onValue(userInputDatabase.qualRed2, function(snapshot) {
+    onValue(teamDatabase.qualRed2, function(snapshot) {
         let red2IDs = Object.keys(snapshot.val());
         let lastRed2ID = red2IDs[red2IDs.length - 1]; //Gets the red2ID of last row
         let lastRed2 = ref(database, `qualSchedule/Red2/${lastRed2ID}`); //Refers to red2 of last row
@@ -251,7 +245,7 @@ function removeLastRow() {
             }
     });
    
-    onValue(userInputDatabase.qualRed3, function(snapshot) {
+    onValue(teamDatabase.qualRed3, function(snapshot) {
         let red3IDs = Object.keys(snapshot.val());
         let lastRed3ID = red3IDs[red3IDs.length - 1]; //Gets the red3ID of last row
         let lastRed3 = ref(database, `qualSchedule/Red3/${lastRed3ID}`); //Refers to red3 of last row
@@ -260,7 +254,7 @@ function removeLastRow() {
             }
     });
             
-    onValue(userInputDatabase.qualBlue1, function(snapshot) {
+    onValue(teamDatabase.qualBlue1, function(snapshot) {
         let blue1IDs = Object.keys(snapshot.val());
         let lastBlue1ID = blue1IDs[blue1IDs.length - 1]; //Gets the blue1ID of last row
         let lastBlue1 = ref(database, `qualSchedule/Blue1/${lastBlue1ID}`); //Refers to blue1 of last row
@@ -269,7 +263,7 @@ function removeLastRow() {
             }
     });
 
-    onValue(userInputDatabase.qualBlue2, function(snapshot) {
+    onValue(teamDatabase.qualBlue2, function(snapshot) {
         let blue2IDs = Object.keys(snapshot.val());
         let lastBlue2ID = blue2IDs[blue2IDs.length - 1]; //Gets the blue2ID of last row
         let lastBlue2 = ref(database, `qualSchedule/Blue2/${lastBlue2ID}`); //Refers to blue2 of last row
@@ -278,7 +272,7 @@ function removeLastRow() {
             }
     });
 
-    onValue(userInputDatabase.qualBlue3, function(snapshot) {
+    onValue(teamDatabase.qualBlue3, function(snapshot) {
         let blue3IDs = Object.keys(snapshot.val());
         let lastBlue3ID = blue3IDs[blue3IDs.length - 1]; //Gets the blue3ID of last row
         let lastBlue3 = ref(database, `qualSchedule/Blue3/${lastBlue3ID}`); //Refers to blue3 of last row
@@ -289,5 +283,5 @@ function removeLastRow() {
 }
 
 function reset() {
-    remove(userInputDatabase.qualTable);
+    remove(teamDatabase.qualTable);
 }
