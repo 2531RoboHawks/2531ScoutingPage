@@ -46,20 +46,17 @@ saveButton.addEventListener("click", function() {
     
     addEmptyRow(); //Adds empty row for new inputs that are programmed to display immediately
     resetInputFields(); //Empty input fields after inputs are saved.
-    updateTable();
     console.log("save_" + (tr.length - 1));
 });
 
 //removes last row (supposedly)
 removeRowButton.addEventListener("click", function() {
     // removeLastRow();
-    // updateTable();
 });
 
 //resets the whole table
 resetButton.addEventListener("dblclick", function() {
     reset();
-    updateTable();
 });
 
 /*** Below are only for functions ***/
@@ -283,5 +280,6 @@ function removeLastRow() {
 }
 
 function reset() {
-    remove(teamDatabase.qualTable);
+    remove(teamDatabase.qualTable); //Remove all data from database
+    tbody.innerHTML = ""; //Resets table on the front-end
 }
