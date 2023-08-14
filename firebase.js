@@ -40,7 +40,9 @@ const app = initializeApp(appSettings);
 
 //Connects database to app
 const database = getDatabase(app); //Realtime-database
-const auth = getAuth(app); //Authentication
+
+//There is something wrong with auth that causes it unable to push data.
+// const auth = getAuth(app); //Authentication
 
 //Users and authentication
 
