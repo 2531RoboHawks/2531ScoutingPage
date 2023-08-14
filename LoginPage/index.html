@@ -8,7 +8,10 @@
     <title>Login</title>
 </head>
 
-<body>
+<body style="background-color: black;">
+    <header>
+        <img height="150px" src="../Images/robohawksPic.png" alt="robohawks-pics">
+    </header> 
     <h1>Welcome to RoboHawks Scouting Page</h1>
     <div class="login">
         <h2>Login</h2>
@@ -17,13 +20,14 @@
                 <input class="loginInput" id="loginEmail" type="email"><br><br>
             <label for="">Password: </label><br>
                 <input class="loginInput" id="loginPassword" type="text"><br><br>
-            <button id="sumbitButton" style="background-color: gold;">Submit</button>
+            <button id="sumbitButton" style="background-color: gold;">Login</button>
         </form>
-        <a id="guestSignInButton" href="">guest sign in</a>
+        <h6 id="errorMessage" style="text-align: center;">error: password/email is invalid. Please try again</h6>
+        <h5 id="guestSignIn" href="" style="text-align: right;">guest sign in</h5>
     </div>
 
 
-    <script src="app.js"></script>
+    <script type="module" src="app.js"></script>
 </body>
 
 </html>
