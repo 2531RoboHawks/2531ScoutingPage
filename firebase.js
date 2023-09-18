@@ -34,8 +34,8 @@ const app = initializeApp(appSettings);
 const database = getDatabase(app); //Realtime-database
 
 //Users and authentication
-export const memberUser = ref(database, "authentication/user");
-export const memberPass = ref(database, "authentication/pass");
+export const memberUser = ref(database, "authentication/member/user");
+export const memberPass = ref(database, "authentication/member/pass");
 
 // Database for Qualification Matches Schedule
 export const qualTable = ref(database, "qualSchedule")
