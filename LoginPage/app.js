@@ -11,6 +11,7 @@ const userInput = document.getElementById("loginUsername");
 const passInput = document.getElementById("loginPassword");
 
 //TODO: hide error message
+//TODO: logout and clear local storage
 
 loginButton.addEventListener('click', function(){
     userLogin();
@@ -20,20 +21,19 @@ loginButton.addEventListener('click', function(){
 function userLogin() {
     onValue(teamDatabase.memberUser, function(snapshot) {
         let memberUser = Object.values(snapshot.val());
-        // if(userInput.value == memberUser) {
-        //     localStorage.setItem('user', 'userValid');
-        // }
+        if(userInput.value == memberUser) {
+            localStorage.setItem('user', 'userValid');
+        }
         // console.log(localStorage.getItem('user'));
-        console.log(memberUser);
     });
 
     onValue(teamDatabase.memberPass, function(snapshot) {
         let memberPass = Object.values(snapshot.val());
-        // if(passInput.value == memberPass) {
-        //     localStorage.setItem('user', 'passValid');
-        // }
+        if(passInput.value == memberPass) {
+            localStorage.setItem('user', 'passValid');
+        }
         // console.log(localStorage.getItem('user'));
-        console.log(memberPass);
     });
-
+    console.log(localStorage.getItem('user'));
+    console.log(localStorage.getItem('user'));
 }
