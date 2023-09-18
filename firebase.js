@@ -22,14 +22,6 @@ import { getDatabase, ref, push, onValue, update, remove, set, child, get} from 
         Import only the functions that you need.
     */
 
-import { 
-    getAuth, 
-    connectAuthEmulator, 
-    signInWithEmailAndPassword, 
-    createUserWithEmailAndPassword, //We will not be using this function
-    onAuthStateChanged,
-    signOut
-} from "https://www.gstatic.com/firebasejs/10.0.0/firebase-auth.js";
 
 const appSettings = {
     databaseURL: "https://scoutingapp-e16c4-default-rtdb.firebaseio.com/"
@@ -41,10 +33,9 @@ const app = initializeApp(appSettings);
 //Connects database to app
 const database = getDatabase(app); //Realtime-database
 
-//There is something wrong with auth that causes it unable to push data.
-// const auth = getAuth(app); //Authentication
-
 //Users and authentication
+export const memberUser = ref(database, "authentication/user");
+export const memberPass = ref(database, "authentication/pass");
 
 // Database for Qualification Matches Schedule
 export const qualTable = ref(database, "qualSchedule")
@@ -58,3 +49,14 @@ export const qualBlue1 = ref(database, "qualSchedule/Blue1");
 export const qualBlue2 = ref(database, "qualSchedule/Blue2");
 export const qualBlue3 = ref(database, "qualSchedule/Blue3");
 
+// Database for Practice Match Schedule
+export const pracTable = ref(database, "pracSchedule")
+export const pracRow = ref(database, "pracSchedule/Row");
+export const pracTime = ref(database, "pracSchedule/Time");
+export const pracMatch = ref(database, "pracSchedule/Match");
+export const pracRed1 = ref(database, "pracSchedule/Red1");
+export const pracRed2 = ref(database, "pracSchedule/Red2");
+export const pracRed3 = ref(database, "pracSchedule/Red3");
+export const pracBlue1 = ref(database, "pracSchedule/Blue1");
+export const pracBlue2 = ref(database, "pracSchedule/Blue2");
+export const pracBlue3 = ref(database, "pracSchedule/Blue3");
