@@ -11,14 +11,12 @@ const userInput = document.getElementById("loginUsername");
 const passInput = document.getElementById("loginPassword");
 
 //Other HTML elements
-const errorMessage = document.getElementById("errorMessage");
+const error = document.getElementById("error");
 
 export let user = 'guest'; //set user initially as guest
 
 //TODO: logout
 //TODO: transfer page after login as member/guest
-
-errorMessage.style.display = 'none'; //Hide error message
 
 loginButton.addEventListener('click', function(){
     userLogin();
@@ -31,6 +29,10 @@ guestSignIn.addEventListener('click', function() {
     user = 'guest'; //set user as guest
     // location.replace("../app.js");
 });
+
+console.log(error.getAttribute('value'));
+
+
 
 //*********Below are only for functions
 
@@ -57,10 +59,11 @@ function userLogin() {
 
     if(localStorage.getItem('memberUser') == 'userValid'  &&  localStorage.getItem('memberPass') == 'passValid') {
         user = 'member';
-        errorMessage.style.display = 'none'; //hide error message
     } else {
         user = 'guest';
-        errorMessage.style.display = 'block'; //show error message
+        if(error.getAttribute != '<h6>error: email/password is invalid. Please try again!</h6>') {
+            error.innerHTML += '<h6>error: email/password is invalid. Please try again!</h6>';
+        }
     }
 }
 
