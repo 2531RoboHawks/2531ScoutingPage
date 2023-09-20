@@ -2,7 +2,8 @@ import { ref, push, onValue, update, remove } from "https://www.gstatic.com/fire
 
 //(import *) lets you import everything from that file
 import * as teamDatabase from "../firebase.js";
-import * as loginStatus from "../LoginPage/app.js";
+import user from "../LoginPage/app.js";
+// loginStatus from "../LoginPage/app.js";
 
 
 //Table and row
@@ -24,7 +25,7 @@ const blue1Input = document.getElementById("blue1");
 const blue2Input = document.getElementById("blue2");
 const blue3Input = document.getElementById("blue3");
 
-console.log(loginStatus.user);
+console.log(user);
 
 //TODO: make sure removeRow removes only one row without having to refresh page
 //TODO: add edit function designated to each row so we wouldn't have to remove row

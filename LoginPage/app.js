@@ -25,6 +25,8 @@ guestSignIn.addEventListener('click', function() {
     // Only for testing; not used here
     // localStorage.clear('memberUser');
     // localStorage.clear('memberPass');
+    console.log(localStorage.getItem('memberUser'));
+    console.log(localStorage.getItem('memberPass'));
 });
 
 //Below are only for functions
@@ -51,5 +53,4 @@ function userLogin() {
         user = 'guest';
     }
     return user;
-    // console.log(user);
 }
