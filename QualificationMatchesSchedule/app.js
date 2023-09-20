@@ -2,7 +2,7 @@ import { ref, push, onValue, update, remove } from "https://www.gstatic.com/fire
 
 //(import *) lets you import everything from that file
 import * as teamDatabase from "../firebase.js";
-// import {user} from "../LoginPage/app.js"; //This causes an error in console
+import * as userStatus from "../LoginPage/app.js"; //This causes an error in console
 
 
 //Table and row
@@ -32,6 +32,7 @@ const blue3Input = document.getElementById("blue3");
 //TODO: (optional) if time >= localTime, then change color --see HTML JavaScript w3schools
 //TODO: (optional) add hover effects --see firebase mobile app tutorial
 
+console.log(userStatus.user);
 
 updateTable(); //Get saved data as soon as page open
 
@@ -50,11 +51,6 @@ saveButton.addEventListener("click", function() {
     addEmptyRow(); //Adds empty row for new inputs that are programmed to display immediately
     resetInputFields(); //Empty input fields after inputs are saved.
     console.log("save_" + (tr.length - 1));
-});
-
-//removes last row (supposedly)
-removeRowButton.addEventListener("click", function() {
-    // removeLastRow();
 });
 
 //resets the whole table
