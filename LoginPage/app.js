@@ -20,13 +20,18 @@ loginButton.addEventListener('click', function(){
     userLogin();
     console.log(user);
 });
-
 guestSignIn.addEventListener('click', function() {
-    // Only for testing; not used here
-    // localStorage.clear('memberUser');
-    // localStorage.clear('memberPass');
+    // Only for testing logouts; not used here
+    localStorage.clear('memberUser');
+    localStorage.clear('memberPass');
     console.log(localStorage.getItem('memberUser'));
     console.log(localStorage.getItem('memberPass'));
+    if(localStorage.getItem('memberUser') == 'userValid'  &&  localStorage.getItem('memberPass') == 'passValid') {
+        user = 'member';
+    } else {
+        user = 'guest';
+    }
+    console.log(user);
 });
 
 //Below are only for functions
