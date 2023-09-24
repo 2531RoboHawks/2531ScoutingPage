@@ -280,5 +280,6 @@ function removeLastRow() {
 
 function reset() {
     remove(teamDatabase.qualTable); //Remove all data from database
-    tbody.innerHTML = ""; //Resets table on the front-end
+    tbody.innerHTML = ""
+    ; //Resets table on the front-end
 }

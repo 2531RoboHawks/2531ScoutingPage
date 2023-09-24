@@ -10,13 +10,11 @@ const loginButton = document.getElementById("loginButton");
 const userInput = document.getElementById("loginUsername");
 const passInput = document.getElementById("loginPassword");
 
-//Other HTML elements
-const error = document.getElementById("error");
-
-export let user = 'guest'; //set user initially as guest
+export let user = 'guest'; //set userStatus initially as guest
 
 //TODO: logout
 //TODO: transfer page after login as member/guest
+//TODO: gets 5 tries for wrong password
 
 loginButton.addEventListener('click', function(){
     userLogin();
@@ -30,16 +28,14 @@ guestSignIn.addEventListener('click', function() {
     // location.replace("../app.js");
 });
 
-console.log(error.getAttribute('value'));
 
-
-
-//*********Below are only for functions
 
 /*
+ ********* Below are only for FUNCTIONS ********
  *Because of scope issues with onValue(), localStorage is needed.
  *Meaning any variables declared within onValue() cannot be used outside of onValue(), and vice versa.
 */
+
 //Checking login validation
 function userLogin() {
     onValue(teamDatabase.memberUser, function(snapshot) {
@@ -52,6 +48,7 @@ function userLogin() {
 
     onValue(teamDatabase.memberPass, function(snapshot) {
         let memberPass = Object.values(snapshot.val()); //Get member's password from firebase
+        //Verify pass
         if(passInput.value == memberPass) {
             localStorage.setItem('memberPass', 'passValid'); //Store pass validation locally
         }
@@ -60,10 +57,11 @@ function userLogin() {
     if(localStorage.getItem('memberUser') == 'userValid'  &&  localStorage.getItem('memberPass') == 'passValid') {
         user = 'member';
     } else {
+        clearUserStatus();
         user = 'guest';
-        if(error.getAttribute != '<h6>error: email/password is invalid. Please try again!</h6>') {
-            error.innerHTML += '<h6>error: email/password is invalid. Please try again!</h6>';
-        }
+        alert("Email/password is invalid. Please try again!")
+        userInput.value = '';
+        passInput.value = '';
     }
 }
 
